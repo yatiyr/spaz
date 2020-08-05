@@ -2,6 +2,14 @@
 @import "abstracts/variables";
 @import "abstracts/mixins";
 
+// COMPONENT IMPORTS
+@import "components/footer";
+@import "components/header";
+@import "components/main";
+
+// LAYOUT IMPORTS
+@import "layout/layout";
+
 // BASE IMPORTS
 @import "base/base";
 

@@ -1,3 +1,25 @@
+.footer {
+  background-color: #298d02;
+  flex: 0 0 auto; }
+
+.header {
+  background-color: #597179;
+  flex: 0 0 auto; }
+
+.main {
+  background-color: #20292c;
+  flex: 1 0 18%; }
+
+.content {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-content: stretch;
+  height: 100vh; }
+
 *,
 *::after,
 *::before {
@@ -6,19 +28,24 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
-  @media only screen and (max-width: 75em) {
-    html {
-      font-size: 56.25%; } }
-  @media only screen and (max-width: 56.25em) {
-    html {
-      font-size: 50%; } }
-  @media only screen and (min-width: 112.5em) {
-    html {
-      font-size: 75%; } }
+  font-size: 62.5%;
+  /*
+    @include respond(tab-land) { // width < 1200?
+        font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+    }
+
+    @include respond(tab-port) { // width < 900?
+        font-size: 50%; //1 rem = 8px, 8/16 = 50%
+    }
+    
+    @include respond(big-desktop) {
+        font-size: 75%; //1rem = 12, 12/16
+    }
+    */ }
 
 body {
-  padding: 0; }
+  padding: 0;
+  background-color: #000; }
   @media only screen and (max-width: 56.25em) {
     body {
       padding: 0; } }
