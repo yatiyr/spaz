@@ -1,0 +1,11 @@
+<svg width="47.436mm" height="43.373mm" version="1.1" viewBox="0 0 47.436 43.373" xmlns="http://www.w3.org/2000/svg">
+ <title>project</title>
+ <g transform="translate(-8.581 -51.154)">
+  <g transform="translate(-24.582 .73819)" stroke-opacity="0">
+   <path transform="scale(.26458)" d="m125.52 325.01v-29.286h3.9286v55h55v3.5714h-58.929z"/>
+   <path transform="scale(.26458)" d="m125.52 220.01v-29.286h58.929v3.5714h-55v55h-3.9286z"/>
+   <path transform="scale(.26458)" d="m300.52 221.8v-27.5h-55v-3.5714h58.929v58.571h-3.9286z"/>
+   <path transform="scale(.26458)" d="m245.52 352.51v-1.7857h55v-55h3.9286v58.571h-58.929z"/>
+  </g>
+ </g>
+</svg>

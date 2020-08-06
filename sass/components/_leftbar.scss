@@ -1,0 +1,53 @@
+.leftbar {
+
+    background-color: $color-primary-light;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    &__selector {
+        display: flex;
+        flex-direction: column;
+        background-color: $color-primary-light-2;
+        flex: 0 0 auto;
+
+        &__element {
+
+            fill: $color-font-main-dark-2;
+
+            &:hover {
+                fill: $color-white;
+            }
+
+            &__icon {
+
+            }
+
+            &__modifier {
+
+            }
+        }
+
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        background-color: $color-primary-light;
+        flex: 1 0 auto;
+
+        // Selector spesific settings and heading
+        &__header {
+
+        }
+
+        &__element {
+
+            &:not(:last-child) {
+                border-bottom: .5rem solid $color-primary-light-3;
+
+            }
+        }
+    }
+
+}
