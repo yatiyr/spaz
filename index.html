@@ -9,22 +9,31 @@
   </head>
   <body>
     <div class="content">
-      <!-- Simdilik gerek yok gibi duruyor
-            <div class="header">a</div>
-      -->
+      <div class="header">a</div>
       <div class="main">
         <div class="leftbar">
           <div class="leftbar__selector">leftbar selector</div>
           <div class="leftbar__content">
-            <svg>
+            <!--             <svg>
               <use xlink:href="img/sprite.svg#icon-write_message"></use>
-            </svg>
+            </svg> -->
+            <div class="leftbar__content__data">
+              <div class="">eren</div>
+              <div class="">dere</div>
+            </div>
+            <div class="leftbar__content__split_handler" id="leftbar_splitter">-</div>
           </div>
         </div>
-        <div class="eti">eti</div>
+        <div class="eti">
+          <div class="eti__header">eti header</div>
+          <div class="eti__container" id="container"></div>
+          <div class="eti__termint">eti__termint</div>
+        </div>
         <div class="rightbar">rightbar</div>
       </div>
       <div class="footer">a</div>
     </div>
   </body>
+  
+  <script src="js/editor.js"></script>
 </html>

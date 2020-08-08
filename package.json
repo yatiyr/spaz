@@ -15,13 +15,15 @@
   },
   "author": "Eren Dere",
   "license": "ISC",
+  "dependencies": {
+    "monaco-editor": "^0.20.0",
+    "electron": "^9.1.2",
+    "cesium": "^1.72.0"
+  },
   "devDependencies": {
     "autoprefixer": "^7.1.4",
-    "cesium": "^1.72.0",
     "concat": "^1.0.3",
-    "electron": "^9.1.2",
     "live-server": "^1.2.1",
-    "monaco-editor": "^0.20.0",
     "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.1",
     "postcss-cli": "^4.1.1",

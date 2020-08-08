@@ -1,9 +1,9 @@
 .leftbar {
-
     background-color: $color-primary-light;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    flex: 0 0 auto;
 
     &__selector {
         display: flex;
@@ -32,21 +32,31 @@
 
     &__content {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         background-color: $color-primary-light;
-        flex: 1 0 auto;
+        flex: 0 0 auto;
+
+        &:not(:last-child) {
+            border-bottom: .5rem solid $color-primary-light-3;
+
+        }
 
         // Selector spesific settings and heading
+        &__data {
+            flex: 0 0 auto;
+        }
+
         &__header {
 
         }
 
         &__element {
 
-            &:not(:last-child) {
-                border-bottom: .5rem solid $color-primary-light-3;
+        }
 
-            }
+        &__split_handler {
+            flex: 0 0 auto;
+            background-color: $color-primary-light;
         }
     }
 

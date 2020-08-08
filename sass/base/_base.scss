@@ -31,6 +31,8 @@ body {
     @include respond(tab-port) {
         padding: 0;
     }
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 ::selection {
@@ -38,3 +40,6 @@ body {
     color: $color-white;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}

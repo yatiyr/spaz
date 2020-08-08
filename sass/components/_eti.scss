@@ -6,6 +6,42 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    flex: 1 0 auto;
+    flex: 1 1 auto;
+    align-items: stretch;
+    min-width: 0rem;
+    min-height: 0rem;
+    //overflow: hidden;
+
+    &__header {
+        background-color: $color-primary-light;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: stretch;
+        flex: 0 0 auto;
+
+    }
+
+    &__container {
+        background-color: $color-primary;
+        flex: 1 1 auto;
+        min-width: 0rem;
+        min-height: 0rem;
+        //overflow: hidden;
+        
+    }
+
+    &__termint {
+        background-color: $color-primary;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        flex: 0 0 auto;
+
+        &__header {
+            background-color: $color-primary;
+        }
+    }
 
 }
