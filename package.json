@@ -1,32 +1,117 @@
 {
   "name": "spaz",
+  "productName": "spaz",
   "version": "1.0.0",
-  "description": "simulation designer and runner",
-  "main": "main.js",
+  "description": "My Electron application description",
+  "main": "./.webpack/main",
   "scripts": {
-    "watch:sass": "node-sass sass/main.scss css/style.css -w",
-    "devserver": "live-server",
-    "start": "electron .",
-    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
-    "concat:css": "concat -o css/style.concat.css css/style.comp.css",
-    "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" css/style.concat.css -o css/style.prefix.css",
-    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
-    "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "eslint --ext .ts ."
   },
-  "author": "Eren Dere",
-  "license": "ISC",
-  "dependencies": {
-    "monaco-editor": "^0.20.0",
-    "electron": "^9.1.2",
-    "cesium": "^1.72.0"
+  "keywords": [],
+  "author": {
+    "name": "yatiyr",
+    "email": "dereeren@yahoo.com"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "spaz"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-dmg",
+          "config": {
+            "background": "../something_random.png",
+            "format": "ULFO"
+          }
+        }
+      ],
+      "plugins": [
+        [
+          "@electron-forge/plugin-webpack",
+          {
+            "mainConfig": "./config/webpack.main.config.js",
+            "renderer": {
+              "config": "./config/webpack.renderer.config.js",
+              "entryPoints": [
+                {
+                  "html": "./public/index.html",
+                  "js": "./src/renderer/renderer.tsx",
+                  "name": "main_window"
+                }
+              ]
+            }
+          }
+        ]
+      ]
+    }
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.4",
-    "concat": "^1.0.3",
-    "live-server": "^1.2.1",
+    "@electron-forge/cli": "6.0.0-beta.52",
+    "@electron-forge/maker-deb": "6.0.0-beta.52",
+    "@electron-forge/maker-dmg": "6.0.0-beta.52",
+    "@electron-forge/maker-rpm": "6.0.0-beta.52",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.52",
+    "@electron-forge/maker-zip": "6.0.0-beta.52",
+    "@electron-forge/plugin-webpack": "6.0.0-beta.52",
+    "@marshallofsound/webpack-asset-relocator-loader": "^0.5.0",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "babel-loader": "^8.1.0",
+    "copy-webpack-plugin": "^6.0.3",
+    "css-loader": "^3.6.0",
+    "electron": "9.2.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.0",
+    "fork-ts-checker-webpack-plugin": "^3.1.1",
+    "html-webpack-include-assets-plugin": "^2.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "node-loader": "^0.6.0",
     "node-sass": "^4.14.1",
-    "npm-run-all": "^4.1.1",
-    "postcss-cli": "^4.1.1",
-    "xterm": "^4.8.1"
+    "sass-loader": "^9.0.3",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.7.0",
+    "xterm": "^4.8.1",
+    "@types/cesium": "1.67.12"
+  },
+  "dependencies": {
+    "@hot-loader/react-dom": "^16.13.0",
+    "@types/react": "^16.9.45",
+    "@types/react-dom": "^16.9.8",
+    "cesium": "^1.72.0",
+    "define-global-webpack-plugin": "0.0.2",
+    "electron-squirrel-startup": "^1.0.0",
+    "eslint-import-resolver-typescript": "^2.2.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-hot-loader": "^4.12.21",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.1",
+    "resium": "^1.12.0",
+    "styled-components": "^5.1.1"
   }
 }
