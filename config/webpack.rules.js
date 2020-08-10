@@ -31,11 +31,15 @@ module.exports = rules = [
       }]
   },
   {
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+  },
+  {
       test: /\.(scss|css)$/,
       use: ["style-loader", "css-loader", "sass-loader"],
   },
   {
-      test: /\.(svg|ico|icns)$/,
+      test: /\.(ico|icns)$/,
       loader: "file-loader",
       options: {
           name: "[path][name].[ext]",
