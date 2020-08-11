@@ -8,6 +8,8 @@
     align-items: stretch;
     -webkit-user-select: none;
     -webkit-app-region: drag;
+    font-family: "Roboto-Regular";
+    font-size: 1.23rem;
     filter: brightness(0.75);
 
     &__focused {
@@ -21,11 +23,12 @@
         height: 3rem;
         width: 3rem;
         align-self: center;
+        margin-left: .5rem;
         &__logo {
             height: 2rem;
             width: 2rem;
             align-self: center;
-            margin-left: 1rem;
+            margin-left: 1.2rem;
             fill: $color-spaz;
             //filter: drop-shadow( 0rem 0.1rem 0.1rem rgba($color-spaz-glow, 0.3));
         }
@@ -37,9 +40,7 @@
         display: flex;
         flex-direction: row;
         flex: 0 0 auto;
-        // TODO: YARIN BURAYA BAKACAKSIN
-        // TODO: RECURSIVE,UBUNTU,UBUNTU MONO,ROBOTO VE MONTSERRAT FONTLARINI TEST EDECEKSIN
-        font-family: "Raleway-ThinItalic";
+        letter-spacing: .05rem;
 
         &__prop {
             background-color: inherit;
@@ -49,7 +50,6 @@
             width: 100%;
             color: $color-font-main-dark-2;
             border: none;
-            font-size: 1.35rem;
             cursor: default;
             //transition: background-color .2s, color .2s;
 
@@ -58,12 +58,10 @@
                 padding: .8rem .8rem .8rem .8rem;
             }
 
-            // TODO: FONT EKLE ILERIDE
-            // font-family: cursive;
 
             &:hover, &:focus {
                 background-color: $color-primary-light-5;
-                color: $color-white;
+                color: $color-font-main;
             }
 
             &__content {
@@ -99,9 +97,8 @@
         align-self: center;
         cursor: default;
         color: $color-font-main-dark-2;
-
-        // TODO: FONT EKLE, BELKI PARENTA DA EKLENEBILIR KARAR VERIRSIN KAFANA GORE
-        //font-family: cursive;
+        font-family: "Montserrat-Regular";
+        font-size: 1.15rem;
     }
 
     &__buttons {
