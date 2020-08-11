@@ -17,8 +17,20 @@ class MinifierButton extends Component {
         }
     }
 
+    componentDidMount() {
+        const electronw = remote.getCurrentWindow();
+        electronw.on('maximize', () => {
+            console.log('asfdasdas');
+            this.setState({state: true});
+        });
+        electronw.on('unmaximize', () => {
+            this.setState({state:false});
+        });
+    }
+
     public handleMinify() {
         var window = remote.getCurrentWindow();
+        
         if(!window.isMaximized()) {
             this.setState({state: false});
             window.maximize();
@@ -31,7 +43,9 @@ class MinifierButton extends Component {
 
     render() {
 
-        if(this.state.state === false) {
+        var window = remote.getCurrentWindow();
+
+        if(!window.isMaximized()) {
             return(
                 <div className="header__buttons__btnMinifier" onClick={this.handleMinify.bind(this)}>
                     <div className="header__buttons__iconDiv">

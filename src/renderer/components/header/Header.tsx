@@ -5,11 +5,35 @@ import React, {Component} from 'react';
 import Properties from './Properties';
 import RightButtons from './RightButtons';
 
+const remote = require('electron').remote;
+
 class Header extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            focused: false,
+        }
+    }
+
+    public toggleFocus() {
+        this.setState({focused: !this.state.focused})
+    }
+
+
+    componentDidMount() {
+        const electronw = remote.getCurrentWindow();
+        electronw.on('focus', () => {
+            this.setState({focused: true});
+        });
+        electronw.on('blur', () => {
+            this.setState({focused:false});
+        });
+    }
 
     render() {
         return(
-            <div className="header">
+            <div className={`header ${this.state.focused ? "header__focused" : ""}`}>
                 <Properties/>
                 <div className="header__heading">Spaz Simulation Runner</div>
                 <RightButtons/>
