@@ -7,7 +7,10 @@ import RightButtons from './RightButtons';
 
 const remote = require('electron').remote;
 
-class Header extends Component {
+type Props = {}
+type State = {focused: boolean};
+
+class Header extends Component<Props,State> {
 
     constructor(props) {
         super(props);
