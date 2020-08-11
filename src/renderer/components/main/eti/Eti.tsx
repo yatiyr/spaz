@@ -22,7 +22,9 @@ class Eti extends Component {
                 <div className="eti__header">
                     eti header
                 </div>
-                <Cesium/>
+                <div className="eti__container">
+                    abcd
+                </div>
                 <div className="eti__termint">
                     eti__termint
                 </div>

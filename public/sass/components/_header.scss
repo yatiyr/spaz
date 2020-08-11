@@ -23,13 +23,20 @@
         width: 3rem;
         align-self: center;
         margin-left: .5rem;
+        -webkit-app-region: drag;
         &__logo {
+            -webkit-app-region: no-drag;
             height: 2rem;
             width: 2rem;
             align-self: center;
             margin-left: 1.2rem;
             fill: $color-spaz;
+            fill-opacity: .25;
             //filter: drop-shadow( 0rem 0.1rem 0.1rem rgba($color-spaz-glow, 0.3));
+
+            &:hover {
+                fill-opacity: 1;
+            }
         }
         
     }
