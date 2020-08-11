@@ -7,6 +7,7 @@
     justify-items: start;
     align-items: stretch;
     -webkit-user-select: none;
+    -webkit-app-region: drag;
 
     &__logoDiv {
         margin-right: 1rem;
@@ -26,6 +27,7 @@
     }
 
     &__properties {
+        -webkit-app-region: no-drag;
         display: flex;
         flex-direction: row;
         flex: 0 0 auto;
@@ -84,6 +86,7 @@
     }
 
     &__heading {
+        -webkit-app-region: drag;
         display: flex;
         text-decoration: none;
         text-transform: capitalize;
@@ -96,6 +99,7 @@
     }
 
     &__buttons {
+        -webkit-app-region: no-drag;
         display: flex;
         flex-direction: row;
         align-items: stretch;

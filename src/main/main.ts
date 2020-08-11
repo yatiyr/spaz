@@ -17,7 +17,7 @@ const createWindow = () => {
       webSecurity: false,
       
     } ,
-    frame: true,
+    frame: false,
     resizable: true,
     minHeight: 180,
     minWidth: 280,
