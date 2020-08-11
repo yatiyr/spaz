@@ -1,4 +1,9 @@
 .footer {
     background-color: $color-footer;
     flex: 0 0 auto;
+    filter: brightness(.60);
+    &__focused {
+        filter: brightness(1);
+    }
+
 }

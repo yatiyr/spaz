@@ -30,14 +30,14 @@ class RightButtons extends Component {
         return(
             <div className="header__buttons">
                 <div className="header__buttons__btnMinimizer">
-                    <div className="header__buttons__iconDiv">
-                        <Minimize className="header__buttons__iconDiv__icon" onClick={this.handleMinimize}/> 
+                    <div className="header__buttons__iconDiv" onClick={this.handleMinimize}>
+                        <Minimize className="header__buttons__iconDiv__icon"/> 
                     </div>
                 </div>
                 <MinifierButton ref="minifierBtn"/>
                 <div className="header__buttons__btnClose">
-                    <div className="header__buttons__iconDiv">
-                        <Close className="header__buttons__iconDiv__icon" onClick={this.handleClose}/> 
+                    <div className="header__buttons__iconDiv" onClick={this.handleClose}>
+                        <Close className="header__buttons__iconDiv__icon"/> 
                     </div>
                 </div>
             </div>
