@@ -8,7 +8,7 @@ import RightButtons from './RightButtons';
 const remote = require('electron').remote;
 
 type Props = {}
-type State = {focused: boolean};
+type State = {focused: boolean; maximized: boolean};
 
 class Header extends Component<Props,State> {
 
@@ -16,6 +16,7 @@ class Header extends Component<Props,State> {
         super(props);
         this.state = {
             focused: false,
+            maximized: false
         }
     }
 
@@ -32,13 +33,21 @@ class Header extends Component<Props,State> {
         electronw.on('blur', () => {
             this.setState({focused:false});
         });
+        electronw.on('maximize', () => {
+            this.setState({maximized: true});
+        });
+        electronw.on('unmaximize', () => {
+            this.setState({maximized:false});
+        });
     }
 
     render() {
         return(
             <div className={`header ${this.state.focused ? "header__focused" : ""}`}>
                 <Properties/>
-                <div className="header__heading">Spaz Simulation Runner</div>
+                <div className={`header__controller ${this.state.maximized ? "header__controller__maximized" : ""}`}>
+                    <div className="header__heading">Spaz Simulation Runner</div>
+                </div>
                 <RightButtons/>
             </div>
         )

@@ -3,11 +3,10 @@
     display: flex;
     flex-direction: row;
     flex: 0 0 auto;
-    justify-content: space-between;
+    justify-content: stretch;
     justify-items: start;
     align-items: stretch;
     -webkit-user-select: none;
-    -webkit-app-region: drag;
     font-family: "Roboto-Regular";
     font-size: 1.23rem;
     filter: brightness(0.75);
@@ -89,20 +88,34 @@
         }
     }
 
-    &__heading {
+    &__controller {
+        display:flex;
+        align-items: center;
+        flex: 1 0 auto;
+        align-self: center;
+        text-align: center;
+        justify-content: center;
         -webkit-app-region: drag;
+        height: 90%;
+
+        &__maximized {
+            height: 100%;
+        }
+    }
+
+    &__heading {
         display: flex;
         text-decoration: none;
         text-transform: capitalize;
         align-self: center;
+        text-align: center;
         transform: translateX(-5rem);
-        //cursor: default;
         color: $color-font-main-dark-2;
         font-family: "Montserrat-Regular";
         font-size: 1rem;
 
         @include respond(tab-port) {
-            transform: translateX(0);
+            transform: translateX(.5rem);
         }
 
         
