@@ -21,7 +21,7 @@ const createWindow = () => {
     } ,
     frame: false,
     resizable: true,
-    minHeight: 180,
+    minHeight: 265,
     minWidth: 280,
   })
 

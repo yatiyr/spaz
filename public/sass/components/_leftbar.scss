@@ -1,5 +1,5 @@
 .leftbar {
-    background-color: $color-primary-light;
+    background-color: $color-primary-1;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -8,20 +8,56 @@
     &__selector {
         display: flex;
         flex-direction: column;
-        background-color: $color-primary-light-2;
+        background-color: $color-primary-2;
         flex: 0 0 auto;
+        width: 5.3rem;
+        justify-items: start;
+        justify-content: space-between;
+
+        &__group {
+            display: flex;
+            flex-direction: column;
+        }
 
         &__element {
-
+            position: relative;
+            display: flex;
+            align-items: center;
             fill: $color-font-main-dark-2;
+            align-self: stretch;
 
             &:hover {
                 fill: $color-white;
+                cursor: pointer;
+
+            }
+
+            &__active {
+                fill: $color-white;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 1px;
+                    background-color: $color-white;
+                }
             }
 
             &__icon {
+                position: relative;
+                height: 3rem;
+                width: 3rem;
+                align-self: stretch;
+                flex: 1 0 auto;
+                margin: 1.2rem 1rem 1.5rem 1rem;
+                
 
             }
+
+
 
             &__modifier {
 
@@ -33,11 +69,11 @@
     &__content {
         display: flex;
         flex-direction: row;
-        background-color: $color-primary-light;
+        background-color: $color-primary-1;
         flex: 0 0 auto;
 
         &:not(:last-child) {
-            border-bottom: .5rem solid $color-primary-light-3;
+            border-bottom: .5rem solid $color-primary-3;
 
         }
 
@@ -56,7 +92,7 @@
 
         &__split_handler {
             flex: 0 0 auto;
-            background-color: $color-primary-light;
+            background-color: $color-primary-1;
         }
     }
 

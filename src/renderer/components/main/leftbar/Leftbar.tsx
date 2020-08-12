@@ -3,15 +3,14 @@
 import {hot} from "react-hot-loader/root";
 import React, {Component} from 'react';
 
+import Selector from './Selector';
 
 class Leftbar extends Component {
 
     render() {
         return(
             <div className="leftbar">
-                <div className="leftbar__selector">
-                    leftbar selector
-                </div>
+                <Selector id={1} />
                 <div className="leftbar__content">
                     <div className="leftbar__content__data">
                         <div className="">eren</div>
