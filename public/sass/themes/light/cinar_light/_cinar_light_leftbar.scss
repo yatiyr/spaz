@@ -1,0 +1,62 @@
+.cinar_light {
+
+    &__leftbar {
+        background-color: $primary-cinar_light;
+    
+        &__selector {
+            background-color: $primary-cinar_light-1;
+    
+    
+    
+            &__element {
+                fill: $svg-cinar_light;
+    
+                &:hover {
+                    fill: $svg-cinar_light-2;
+                    background-color: $primary-cinar_light-3;
+                }
+    
+                &:active {
+                    background-color: $primary-cinar_light-4;
+                }
+                
+    
+                &__modifier {
+    
+                }
+            }
+    
+        }
+    
+        &__content {
+
+            background-color: $primary-cinar_light;
+
+            &__data {
+                background-color: $primary-cinar_light-5;
+            }
+    
+            
+            //&:not(:last-child) {
+             //   border-bottom: .5rem solid $color-primary-3;
+    
+            //}
+    
+            // Selector spesific settings and heading
+    
+            &__header {
+    
+            }
+    
+            &__element {
+    
+            }
+    
+            &__split_handler {
+                background-color: $color-primary-1;
+            }
+        }
+    
+    }
+
+}

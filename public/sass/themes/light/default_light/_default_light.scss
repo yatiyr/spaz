@@ -7,7 +7,7 @@
 @import "default_light_footer";
 
 
-::selection {
+.default_light__eti *::selection {
     background-color: $primary-default_light-selection;
     color: $color-white;
 }

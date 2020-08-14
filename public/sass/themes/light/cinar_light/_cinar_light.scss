@@ -1,0 +1,13 @@
+/*----IMPORT COMPONENTS----*/
+@import "cinar_light_colors";
+@import "cinar_light_header";
+@import "cinar_light_leftbar";
+@import "cinar_light_eti";
+@import "cinar_light_rightbar";
+@import "cinar_light_footer";
+
+
+.cinar_light__eti *::selection {
+    background-color: $primary-cinar_light-selection;
+    color: $color-white;
+}

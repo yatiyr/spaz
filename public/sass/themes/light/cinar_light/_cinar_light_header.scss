@@ -1,0 +1,73 @@
+.cinar_light {
+
+    &__header {
+        background-color: $primary-cinar_light-2;
+
+        &__logoDiv__logo {
+            fill: $color-logo-cinar_light;
+        }
+
+        &__properties {
+
+            &__prop {
+                background-color: inherit;
+                color: $font-cinar_light;
+
+                &:hover, &:focus {
+                    background-color: $primary-cinar_light-3;
+                    color: $font-cinar_light-dark-1;
+                }
+
+                // TODO: CONTENT FLEX OLARAK VE ELEMANLAR DIV OLARAK DEGISTIRILECK
+                &__content {
+                    background-color: $primary-cinar_light-2;
+
+                    &__item {
+                        color:  $font-cinar_light-dark-2;
+
+                        &:hover {
+                            background-color: $primary-cinar_light-1;
+                        }
+                    }
+                }               
+            }
+        }
+
+        &__heading {
+            color: $font-cinar_light;
+        }
+
+        &__buttons {
+
+            &__btnClose {
+                fill: $font-cinar_light-dark-2;
+                background-color: inherit;
+
+                &:hover {
+                    fill: $button-close-hover-fill-cinar_light;
+                    background-color: $button-close-cinar_light;
+                } 
+            }
+
+            &__btnMinimizer {
+                fill: $font-cinar_light-dark-2;
+                background-color: inherit;
+
+                &:hover {
+                    fill: $font-cinar_light-dark-2;
+                    background-color: $primary-cinar_light-3;
+                } 
+            }
+
+            &__btnMinifier {
+                fill: $font-cinar_light-dark-2;
+                background-color: inherit;
+
+                &:hover {
+                    fill: $font-cinar_light-dark-2;
+                    background-color: $primary-cinar_light-3;
+                } 
+            }
+        }
+    }
+}

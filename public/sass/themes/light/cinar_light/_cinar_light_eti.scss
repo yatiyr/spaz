@@ -1,0 +1,27 @@
+.cinar_light {
+    // ETI (EDITOR + TERMINAL + INTERPRETER)
+
+    &__eti {
+
+        background-color: $primary-cinar_light-lighter-1;
+
+        &__header {
+            background-color: $primary-cinar_light-lighter-1;
+            color: $font-cinar_light;
+        }
+
+        &__container {
+            background-color: $primary-cinar_light-lighter-1;
+            color: $font-cinar_light-dark-1;
+        }
+
+        &__termint {
+            background-color: $primary-cinar_light-lighter-1;
+            color: $font-cinar_light-dark-1;
+            &__header {
+                background-color: $primary-cinar_light-lighter-1;
+            }
+        }
+
+    }
+}
