@@ -1,8 +1,7 @@
-<svg width="67.533mm" height="56.996mm" version="1.1" viewBox="0 0 67.533 56.996" xmlns="http://www.w3.org/2000/svg">
+<svg width="248.71mm" height="150.81mm" version="1.1" viewBox="0 0 248.71 150.81" xmlns="http://www.w3.org/2000/svg">
  <title>cross</title>
- <g transform="translate(10.198 -23.905)">
-  <g transform="matrix(.26458 0 0 .26458 -18.234 13.574)">
-   <path d="m35.671 40.324h79.872l43.426 61.649 44.589-62.424 79.484 1.1632-82.586 105.07 84.137 108.18h-82.586l-44.976-63.2-43.813 62.812h-81.811l84.525-107.01z" stroke="#000" stroke-width="1px"/>
-  </g>
+ <g fill="#040000">
+  <rect transform="matrix(1 0 -.74699 .66483 0 0)" x="169.45" y="9.699e-7" width="79.259" height="226.84"/>
+  <rect transform="matrix(-1 0 .74699 .66483 0 0)" x="-79.259" y="-1.0688e-14" width="79.259" height="226.84"/>
  </g>
 </svg>

@@ -3,7 +3,9 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    flex: 0 0 auto;
+    flex: 0 1 auto;
+    min-width: 0rem;
+    min-height: 0rem;
 
     &__selector {
         display: flex;
@@ -28,22 +30,19 @@
 
             &:hover {
                 fill: $color-white;
+                background-color: #8d00df;
                 cursor: pointer;
+                transition: .3s;
 
             }
 
+            &:active {
+                background-color: #6c00aa;
+            }
+            
             &__active {
                 fill: $color-white;
-
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: 100%;
-                    width: 1px;
-                    background-color: $color-white;
-                }
+                background-color: #4e4752
             }
 
             &__icon {
@@ -53,7 +52,6 @@
                 align-self: stretch;
                 flex: 1 0 auto;
                 margin: 1.2rem 1rem 1.5rem 1rem;
-                
 
             }
 
@@ -67,19 +65,26 @@
     }
 
     &__content {
+        position: relative;
         display: flex;
         flex-direction: row;
         background-color: $color-primary-1;
-        flex: 0 0 auto;
+        flex: 0 1 auto;
+        overflow: hidden;
+        -webkit-user-select: none;
 
-        &:not(:last-child) {
-            border-bottom: .5rem solid $color-primary-3;
+        //&:not(:last-child) {
+         //   border-bottom: .5rem solid $color-primary-3;
 
-        }
+        //}
 
         // Selector spesific settings and heading
         &__data {
             flex: 0 0 auto;
+            //overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            min-width: 0;
         }
 
         &__header {
@@ -91,8 +96,14 @@
         }
 
         &__split_handler {
+            display: inline-block;
+            height: 100%;
+            opacity: 0;
+            width: .5rem;
+            margin-left: -.5rem;
             flex: 0 0 auto;
             background-color: $color-primary-1;
+            cursor: ew-resize;
         }
     }
 

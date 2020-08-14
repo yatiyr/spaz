@@ -22,7 +22,7 @@ const createWindow = () => {
     frame: false,
     resizable: true,
     minHeight: 265,
-    minWidth: 280,
+    minWidth: 600,
   })
 
   // and load the index.html of the app.

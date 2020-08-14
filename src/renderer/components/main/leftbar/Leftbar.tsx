@@ -4,20 +4,47 @@ import {hot} from "react-hot-loader/root";
 import React, {Component} from 'react';
 
 import Selector from './Selector';
+import LeftBarContent from './LeftbarContent'
 
-class Leftbar extends Component {
+
+type State = {
+    RenderMode: string;
+    showContent: boolean;
+}
+
+type Props = {
+
+}
+
+class Leftbar extends Component<Props, State>{
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            RenderMode: "FileTree",
+            showContent: true,
+        }
+
+        this.handleSelectionChange = this.handleSelectionChange.bind(this);
+        this.givePageToRender = this.givePageToRender.bind(this);
+    }
+
+    public handleSelectionChange(showPage, whichPage) {
+        this.setState({RenderMode: whichPage, showContent: showPage}, ()=> {
+            console.log("states passed", showPage + " " + whichPage);
+        })
+    }
+
+    public givePageToRender() {
+        return this.state.RenderMode;
+    }
 
     render() {
         return(
             <div className="leftbar">
-                <Selector id={1} />
-                <div className="leftbar__content">
-                    <div className="leftbar__content__data">
-                        <div className="">eren</div>
-                        <div className="">dere</div>
-                    </div>
-                    <div className="leftbar__content__split_handler" id="leftbar_splitter">-</div>
-                </div>
+                <Selector stateHandler={this.handleSelectionChange}/>
+                <LeftBarContent whichPage={this.state.RenderMode} showPage={this.state.showContent}/>
+                <div className="leftbar__content__split_handler" id="leftbar_splitter"></div>
             </div>
         )
     }

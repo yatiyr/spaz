@@ -9,65 +9,80 @@ import Search from '../../../../../public/img/icons/magnifier.svg';
 
 import User from '../../../../../public/img/icons/user.svg';
 import Settings from '../../../../../public/img/icons/settings.svg';
+import { TouchBarSlider } from "electron";
 
 type Element = {
     active: boolean;
 }
 
+type Props = {
+    stateHandler: Function;
+}
 
-type Props = {id: number}
 type State = {
-    Explorer: Element;
-    Search: Element;
-    User: Element;
-    Settings: Element;
+    Active: string;
+    showContent: boolean;
 }
 
 class Selector extends Component<Props, State> {
-    ExplorerRef: React.RefObject<HTMLDivElement>;
-    SearchRef: React.RefObject<unknown>;
-
-    UserRef: React.RefObject<unknown>
-    SettingsRef: React.RefObject<unknown>
 
     constructor(props) {
         super(props);
         this.state = {
-            Explorer: {active: false},
-            Search: {active: false},
-            User: {active: false},
-            Settings: {active: false}            
-        }
-
-        this.ExplorerRef = React.createRef();
-        this.SearchRef = React.createRef();
-        this.UserRef = React.createRef();
-        this.SettingsRef = React.createRef();
+            Active: "FileTree",
+            showContent: true,
+        };
+        this.setSelection = this.setSelection.bind(this);
+        this.handleSelectionStyle = this.handleSelectionStyle.bind(this);
     }
 
-    public print() {
-        console.log(this.props.id);
+
+    public setSelection(element) {
+
+        // If element is clicked again
+        if(element === this.state.Active) {
+
+            // TODO: Second click functions taken from props to send parent component
+            this.setState({Active: element, showContent: !this.state.showContent}, () => {
+                this.props.stateHandler(this.state.showContent, this.state.Active);
+            });
+        }
+        else {
+            this.setState({Active: element, showContent: true }, () => {
+                this.props.stateHandler(this.state.showContent, this.state.Active);
+            });
+        }
+
+
+    }
+
+    public handleSelectionStyle(element) {
+        if(element === this.state.Active) {
+            return "leftbar__selector__element__active";
+        }
+        else {
+            return "";
+        }
     }
 
     render() {
 
-        return(
-            
+        return(            
             <div className="leftbar__selector">
                 <div className="selector__group">
-                    <div ref={this.ExplorerRef} className="leftbar__selector__element leftbar__selector__element__active"  id="Explorer" onClick={this.print.bind(this)}>
+                    <div className={`leftbar__selector__element ${this.handleSelectionStyle("FileTree")}`}  id="FileTree" onClick={() => this.setSelection("FileTree")}>
                         <Explorer  className="leftbar__selector__element__icon"/>
                     </div>
-                    <div className="leftbar__selector__element" id="Search">
-                        <Search ref={this.SearchRef} className="leftbar__selector__element__icon"/>
+                    <div className={`leftbar__selector__element ${this.handleSelectionStyle("Find")}`} id="Find" onClick={() => this.setSelection("Find")}>
+                        <Search className="leftbar__selector__element__icon"/>
                     </div>
                 </div>
                 <div className="selector__group">
                     <div className="leftbar__selector__element" id="User">
-                        <User ref={this.UserRef} className="leftbar__selector__element__icon"/>
+                        <User className="leftbar__selector__element__icon"/>
                     </div>
                     <div className="leftbar__selector__element" id="Settings">
-                        <Settings ref={this.SettingsRef} className="leftbar__selector__element__icon"/>
+                        <Settings className="leftbar__selector__element__icon"/>
                     </div>                    
                 </div>
             </div>

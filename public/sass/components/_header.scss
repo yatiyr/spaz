@@ -1,5 +1,4 @@
 .header {
-    background-color: $color-primary-3;
     display: flex;
     flex-direction: row;
     flex: 0 0 auto;
@@ -7,9 +6,10 @@
     justify-items: start;
     align-items: stretch;
     -webkit-user-select: none;
-    font-family: "Roboto-Regular";
-    font-size: 1.23rem;
-    filter: brightness(0.75);
+    font-family: "OpenSans-Regular";
+    font-size: 1.35rem;
+    //font-weight: lighter;
+    filter: brightness(0.90);
 
     &__focused {
         filter: brightness(1);
@@ -19,26 +19,18 @@
     &__logoDiv {
         margin-right: 1rem;
         display: flex;
-        height: 3rem;
-        width: 3rem;
+        height: 4rem;
+        width: 4rem;
         align-self: center;
         margin-left: .5rem;
         -webkit-app-region: drag;
         &__logo {
             -webkit-app-region: no-drag;
-            height: 2rem;
-            width: 2rem;
+            height: 4rem;
+            width: 4rem;
             align-self: center;
             margin-left: 1.2rem;
-            fill: $color-spaz;
-            fill-opacity: .25;
-            //filter: drop-shadow( 0rem 0.1rem 0.1rem rgba($color-spaz-glow, 0.3));
-
-            &:hover {
-                fill-opacity: 1;
-            }
         }
-        
     }
 
     &__properties {
@@ -46,52 +38,37 @@
         display: flex;
         flex-direction: row;
         flex: 0 0 auto;
-        letter-spacing: .05rem;
+        letter-spacing: .08rem;
 
         &__prop {
-            background-color: inherit;
+            position: relative;
             align-self: center;
             display: flex;
             height: 100%;
             width: 100%;
-            color: $color-font-main-dark-2;
             border: none;
             cursor: default;
             //transition: background-color .2s, color .2s;
-
             &__name {
                 align-self: center;
                 padding: .8rem .8rem .8rem .8rem;
 
             }
 
-            &:hover, &:focus {
-                background-color: $color-primary-5;
-                color: $color-font-main;
-                
-            }
-
             &__content {
                 display: none;
-                background-color: $color-primary-2;
                 min-width: 15rem;
                 overflow: auto;
                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
                 z-index: 1;
-
                 &__show {
                     display: block;
                 }
             }
 
             &__content a {
-                color: $color-white;
                 text-decoration: none;
                 display: block;
-
-                &:hover {
-                    background-color: $color-selection-2;
-                }
             }
         }
     }
@@ -118,15 +95,12 @@
         align-self: center;
         text-align: center;
         transform: translateX(-5rem);
-        color: $color-font-main-dark-2;
         font-family: "Montserrat-Regular";
-        font-size: 1rem;
+        font-size: 1.2rem;
 
         @include respond(tab-port) {
             transform: translateX(.5rem);
         }
-
-        
     }
 
     &__buttons {
@@ -151,39 +125,20 @@
 
         &__btnClose {
             display: flex;
-            fill: $color-font-main-dark-2;
-            background-color: inherit;
-            //transition: background-color .5s;
             align-items: center;
             align-self: stretch;
-            &:hover {
-                fill: $color-font-main;
-                background-color: $color-close-button;
-            }
         }
 
         &__btnMinimizer {
             display: flex;
-            fill: $color-font-main-dark-1;
-            background-color: inherit;
             //transition: background-color .5s;
             align-items: center;
-            &:hover {
-                fill: $color-font-main;
-                background-color: $color-minimize-button;
-            }
         }
 
         &__btnMinifier {
             display: flex;
-            fill: $color-font-main-dark-1;
-            background-color: inherit;
             //transition: background-color .5s;
             align-items: center;
-            &:hover {
-                fill: $color-font-main;
-                background-color: $color-minify-button;
-            } 
         }
     }
 

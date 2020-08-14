@@ -10,7 +10,7 @@
     align-items: stretch;
     min-width: 0rem;
     min-height: 0rem;
-    //overflow: hidden;
+    overflow: hidden;
 
     &__header {
         background-color: $color-primary-1;
@@ -19,15 +19,17 @@
         justify-content: flex-start;
         align-items: stretch;
         flex: 0 0 auto;
+        min-width: 0rem;
+        min-height: 0rem;
 
     }
 
     &__container {
         background-color: $color-primary;
-        flex: 1 1 auto;
-        min-width: 0rem;
-        min-height: 0rem;
-        //overflow: hidden;
+        flex: 1 0 auto;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
         
     }
 

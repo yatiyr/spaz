@@ -29,13 +29,13 @@ class RightButtons extends Component {
     render() {
         return(
             <div className="header__buttons">
-                <div className="header__buttons__btnMinimizer">
+                <div className="header__buttons__btnMinimizer default_light__header__buttons__btnMinimizer">
                     <div className="header__buttons__iconDiv" onClick={this.handleMinimize}>
                         <Minimize className="header__buttons__iconDiv__icon"/> 
                     </div>
                 </div>
                 <MinifierButton ref="minifierBtn"/>
-                <div className="header__buttons__btnClose">
+                <div className="header__buttons__btnClose default_light__header__buttons__btnClose">
                     <div className="header__buttons__iconDiv" onClick={this.handleClose}>
                         <Close className="header__buttons__iconDiv__icon"/> 
                     </div>

@@ -23,7 +23,10 @@ class Eti extends Component {
                     eti header
                 </div>
                 <div className="eti__container">
-                    abcd
+                    asdsadsasasasasasasasasasasasasasasasasasasasa
+                    sasasasasasasasasasasa
+                    sasasasasasasasasasasasasa
+                    sasasasasasasasasasa
                 </div>
                 <div className="eti__termint">
                     eti__termint

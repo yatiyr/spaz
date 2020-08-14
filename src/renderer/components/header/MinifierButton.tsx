@@ -47,7 +47,7 @@ class MinifierButton extends Component {
 
         if(!window.isMaximized()) {
             return(
-                <div className="header__buttons__btnMinifier" onClick={this.handleMinify.bind(this)}>
+                <div className="header__buttons__btnMinifier default_light__header__buttons__btnMinifier" onClick={this.handleMinify.bind(this)}>
                     <div className="header__buttons__iconDiv">
                         <Shrink className="header__buttons__iconDiv__icon"/> 
                     </div>
@@ -56,7 +56,7 @@ class MinifierButton extends Component {
         }
         else {
             return(
-                <div className="header__buttons__btnMinifier" onClick={this.handleMinify.bind(this)}>
+                <div className="header__buttons__btnMinifier default_light__header__buttons__btnMinifier" onClick={this.handleMinify.bind(this)}>
                     <div className="header__buttons__iconDiv">
                         <Grow className="header__buttons__iconDiv__icon"/> 
                     </div>

@@ -43,10 +43,10 @@ class Header extends Component<Props,State> {
 
     render() {
         return(
-            <div className={`header ${this.state.focused ? "header__focused" : ""}`}>
+            <div className={`header default_light__header ${this.state.focused ? "header__focused" : ""}`}>
                 <Properties/>
                 <div className={`header__controller ${this.state.maximized ? "header__controller__maximized" : ""}`}>
-                    <div className="header__heading">Spaz Simulation Runner</div>
+                    <div className="header__heading default_light__header__heading">Spaz Simulation Runner</div>
                 </div>
                 <RightButtons/>
             </div>
