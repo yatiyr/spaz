@@ -1,0 +1,27 @@
+.default_light {
+    // ETI (EDITOR + TERMINAL + INTERPRETER)
+
+    &__eti {
+
+        background-color: $primary-default_light-lighter-1;
+
+        &__header {
+            background-color: $primary-default_light-lighter-1;
+            color: $font-default_light;
+        }
+
+        &__container {
+            background-color: $primary-default_light-lighter-1;
+            color: $font-default_light-dark-1;
+        }
+
+        &__termint {
+            background-color: $primary-default_light-lighter-1;
+            color: $font-default_light-dark-1;
+            &__header {
+                background-color: $primary-default_light-lighter-1;
+            }
+        }
+
+    }
+}

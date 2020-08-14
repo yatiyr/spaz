@@ -68,20 +68,20 @@ class Selector extends Component<Props, State> {
     render() {
 
         return(            
-            <div className="leftbar__selector">
+            <div className="leftbar__selector default_light__leftbar__selector">
                 <div className="selector__group">
-                    <div className={`leftbar__selector__element ${this.handleSelectionStyle("FileTree")}`}  id="FileTree" onClick={() => this.setSelection("FileTree")}>
+                    <div className={`leftbar__selector__element default_light__leftbar__selector__element ${this.handleSelectionStyle("FileTree")}`}  id="FileTree" onClick={() => this.setSelection("FileTree")}>
                         <Explorer  className="leftbar__selector__element__icon"/>
                     </div>
-                    <div className={`leftbar__selector__element ${this.handleSelectionStyle("Find")}`} id="Find" onClick={() => this.setSelection("Find")}>
+                    <div className={`leftbar__selector__element default_light__leftbar__selector__element ${this.handleSelectionStyle("Find")}`} id="Find" onClick={() => this.setSelection("Find")}>
                         <Search className="leftbar__selector__element__icon"/>
                     </div>
                 </div>
                 <div className="selector__group">
-                    <div className="leftbar__selector__element" id="User">
+                    <div className="leftbar__selector__element default_light__leftbar__selector__element" id="User">
                         <User className="leftbar__selector__element__icon"/>
                     </div>
-                    <div className="leftbar__selector__element" id="Settings">
+                    <div className="leftbar__selector__element default_light__leftbar__selector__element" id="Settings">
                         <Settings className="leftbar__selector__element__icon"/>
                     </div>                    
                 </div>

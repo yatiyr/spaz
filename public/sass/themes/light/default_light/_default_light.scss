@@ -1,3 +1,13 @@
 /*----IMPORT COMPONENTS----*/
 @import "default_light_colors";
 @import "default_light_header";
+@import "default_light_leftbar";
+@import "default_light_eti";
+@import "default_light_rightbar";
+@import "default_light_footer";
+
+
+::selection {
+    background-color: $primary-default_light-selection;
+    color: $color-white;
+}

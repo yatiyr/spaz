@@ -1,9 +1,7 @@
 .default_light {
 
     &__header {
-        background-color: $primary-default_light;
-        font-family: "OpenSans-Regular";
-        font-size: 1.35rem;
+        background-color: $primary-default_light-2;
 
         &__logoDiv__logo {
             fill: $color-logo-default_light;
@@ -16,13 +14,13 @@
                 color: $font-default_light;
 
                 &:hover, &:focus {
-                    background-color: $primary-default_light-1;
+                    background-color: $primary-default_light-3;
                     color: $font-default_light-dark-1;
                 }
 
                 // TODO: CONTENT FLEX OLARAK VE ELEMANLAR DIV OLARAK DEGISTIRILECK
                 &__content {
-                    background-color: $primary-default_light;
+                    background-color: $primary-default_light-2;
 
                     &__item {
                         color:  $font-default_light-dark-2;
@@ -57,7 +55,7 @@
 
                 &:hover {
                     fill: $font-default_light-dark-2;
-                    background-color: $primary-default_light-1;
+                    background-color: $primary-default_light-3;
                 } 
             }
 
@@ -67,7 +65,7 @@
 
                 &:hover {
                     fill: $font-default_light-dark-2;
-                    background-color: $primary-default_light-1;
+                    background-color: $primary-default_light-3;
                 } 
             }
         }

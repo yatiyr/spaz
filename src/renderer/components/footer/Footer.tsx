@@ -33,7 +33,7 @@ class Footer extends Component<Props, State> {
 
     render() {
         return(
-            <div className={`footer ${this.state.focused ? "footer__focused" : ""}`}>a</div>
+            <div className={`footer default_light__footer ${this.state.focused ? "footer__focused" : ""}`}>a</div>
         )
     }
 }

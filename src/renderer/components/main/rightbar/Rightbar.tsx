@@ -8,7 +8,7 @@ class Rightbar extends Component {
 
     render() {
         return(
-            <div className="rightbar">rightbar</div>
+            <div className="rightbar default_light__rightbar">rightbar</div>
         )
     }
 }

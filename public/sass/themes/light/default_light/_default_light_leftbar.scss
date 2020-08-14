@@ -1,0 +1,62 @@
+.default_light {
+
+    &__leftbar {
+        background-color: $primary-default_light;
+    
+        &__selector {
+            background-color: $primary-default_light-1;
+    
+    
+    
+            &__element {
+                fill: $svg-default_light;
+    
+                &:hover {
+                    fill: $svg-default_light-2;
+                    background-color: $primary-default_light-3;
+                }
+    
+                &:active {
+                    background-color: $primary-default_light-4;
+                }
+                
+    
+                &__modifier {
+    
+                }
+            }
+    
+        }
+    
+        &__content {
+
+            background-color: $primary-default_light;
+
+            &__data {
+                background-color: $primary-default_light-5;
+            }
+    
+            
+            //&:not(:last-child) {
+             //   border-bottom: .5rem solid $color-primary-3;
+    
+            //}
+    
+            // Selector spesific settings and heading
+    
+            &__header {
+    
+            }
+    
+            &__element {
+    
+            }
+    
+            &__split_handler {
+                background-color: $color-primary-1;
+            }
+        }
+    
+    }
+
+}

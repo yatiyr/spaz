@@ -36,11 +36,6 @@ body {
     overflow-y: hidden;
 }
 
-::selection {
-    background-color: $color-selection-1;
-    color: $color-white;
-}
-
 ::-webkit-scrollbar {
     display: none;
 }

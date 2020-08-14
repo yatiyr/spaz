@@ -25,7 +25,7 @@ class LeftbarContent extends Component<Props, State> {
 
         if(this.props.showPage) {
             return (
-                <div className="leftbar__content">
+                <div className="leftbar__content default_light__leftbar__content">
                     <div className="leftbar__content__data">
                         <div className="">{this.props.whichPage}</div>
                     </div>

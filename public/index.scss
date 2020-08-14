@@ -23,4 +23,11 @@
 @import "sass/base/base";
 
 // THEME IMPORTS
-@import "sass/themes/themes"
+@import "sass/themes/themes";
+
+// TYPOGRAPHY IMPORTS
+@import "sass/typography/header";
+@import "sass/typography/leftbar";
+@import "sass/typography/eti";
+@import "sass/typography/rightbar";
+@import "sass/typography/footer";

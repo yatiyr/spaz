@@ -41,7 +41,7 @@ class Leftbar extends Component<Props, State>{
 
     render() {
         return(
-            <div className="leftbar">
+            <div className="leftbar default_light__leftbar">
                 <Selector stateHandler={this.handleSelectionChange}/>
                 <LeftBarContent whichPage={this.state.RenderMode} showPage={this.state.showContent}/>
                 <div className="leftbar__content__split_handler" id="leftbar_splitter"></div>

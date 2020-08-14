@@ -18,17 +18,14 @@ class Eti extends Component {
 
     render() {
         return(
-            <div className="eti">
-                <div className="eti__header">
+            <div className="eti default_light__eti">
+                <div className="eti__header default_light__eti__header">
                     eti header
                 </div>
-                <div className="eti__container">
-                    asdsadsasasasasasasasasasasasasasasasasasasasa
-                    sasasasasasasasasasasa
-                    sasasasasasasasasasasasasa
-                    sasasasasasasasasasa
+                <div className="eti__container default_light__eti__container">
+                    <Cesium/>
                 </div>
-                <div className="eti__termint">
+                <div className="eti__termint default_light__eti__termint">
                     eti__termint
                 </div>
             </div>
