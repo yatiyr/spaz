@@ -61,6 +61,11 @@
                   "html": "./public/index.html",
                   "js": "./src/renderer/renderer.tsx",
                   "name": "main_window"
+                },
+                {
+                  "html": "./public/loadingPage.html",
+                  "js": "./src/renderer/loadingPageRenderer.tsx",
+                  "name": "loading_window"
                 }
               ]
             }

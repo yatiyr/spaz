@@ -1,7 +1,14 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, nativeImage } from 'electron';
 declare const MAIN_WINDOW_WEBPACK_ENTRY: any;
+declare const LOADING_WINDOW_WEBPACK_ENTRY: any;
+
+const path = require('path');
+const image = nativeImage.createFromPath(__dirname + 'public/img/icons/spaz_icon_colored.png');
+
+image.setTemplateImage(true);
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
@@ -23,7 +30,11 @@ const createWindow = () => {
     resizable: true,
     minHeight: 265,
     minWidth: 600,
+    backgroundColor: '#000',
+    show: false,
+    icon: image
   })
+
 
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
@@ -31,7 +42,26 @@ const createWindow = () => {
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
 
+
+  const loadingWindow = new BrowserWindow({
+    width: 300,
+    height: 400,
+    frame: false,
+    resizable: false,
+    backgroundColor: '#000',
+    show: true
+  })
+
+  loadingWindow.loadURL(LOADING_WINDOW_WEBPACK_ENTRY);
+
+  mainWindow.once('ready-to-show', () => {
+    loadingWindow.close();
+    mainWindow.show();
+  })
+
 };
+
+
 
 app.commandLine.appendSwitch('ignore-certificate-errors', 'true');
 app.commandLine.appendSwitch('allow-insecure-localhost', 'true');
@@ -40,6 +70,7 @@ app.commandLine.appendSwitch('allow-insecure-localhost', 'true');
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow);
+
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits

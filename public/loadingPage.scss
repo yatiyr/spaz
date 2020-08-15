@@ -1,0 +1,54 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@font-face {
+    font-family: "Ubuntu-Regular";
+    src: url("./fonts/ubuntu/Ubuntu-Regular.ttf") format('truetype');
+}
+
+.loadingPage {
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom right, rgba(rgb(58, 0, 17),1),rgba(rgb(58, 0, 17),1),rgba(rgb(58, 0, 17),1),rgba(rgb(58, 0, 17),1));
+    color: #000;
+    height: 100vh;
+}
+
+
+@keyframes scale {
+    50% {
+        transform: scale(.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.icon {
+    flex: 1 0 auto;
+    align-self: center;
+    transform-origin: 50% 50%;
+    animation: scale 1s infinite;
+    fill: #ffffff;
+}
+
+.text {
+    flex: 0 0 auto;
+    height: 100px;
+    align-self: center;
+    font-family: "Ubuntu-Regular";
+    font-size: 15px;
+    color: #fff;
+
+}
