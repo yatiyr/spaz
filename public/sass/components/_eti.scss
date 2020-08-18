@@ -1,7 +1,7 @@
 // ETI (EDITOR + TERMINAL + INTERPRETER)
 
 .eti {
-
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -9,23 +9,23 @@
     align-items: stretch;
     min-width: 0rem;
     min-height: 0rem;
-    overflow: hidden;
+    height: 100%;
 
     &__header {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: stretch;
-        flex: 0 1 auto;
+        flex: 0 0 auto;
         min-width: 0rem;
         min-height: 0rem;
-        overflow: hidden;
 
     }
 
     &__container {
+        display: flex;
+        flex-direction: column;
         flex: 1 1 auto;
-        overflow: hidden;
         height: 100%;
         width: 100%;
         
@@ -36,8 +36,7 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: stretch;
-        flex: 0 1 auto;
-        overflow: hidden;
+        flex: 0 0 auto;
 
         &__header {
         }

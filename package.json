@@ -19,7 +19,9 @@
   "license": "MIT",
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "icon": "./public/img/icons/spaz_icon_deployment.ico"
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
@@ -125,7 +127,8 @@
     "react-dom": "^16.13.1",
     "react-hot-loader": "^4.12.21",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.1",
+    "react-scripts": "^3.4.3",
+    "react-split-pane": "^0.1.92",
     "resium": "^1.12.0",
     "resize-observer-polyfill": "^1.5.1",
     "styled-components": "^5.1.1",

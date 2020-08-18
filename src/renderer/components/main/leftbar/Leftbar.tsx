@@ -13,7 +13,7 @@ type State = {
 }
 
 type Props = {
-
+    stateHandler: Function;
 }
 
 class Leftbar extends Component<Props, State>{
@@ -29,10 +29,9 @@ class Leftbar extends Component<Props, State>{
         this.givePageToRender = this.givePageToRender.bind(this);
     }
 
+
     public handleSelectionChange(showPage, whichPage) {
-        this.setState({RenderMode: whichPage, showContent: showPage}, ()=> {
-            console.log("states passed", showPage + " " + whichPage);
-        })
+        this.props.stateHandler(showPage, whichPage);
     }
 
     public givePageToRender() {
@@ -43,8 +42,6 @@ class Leftbar extends Component<Props, State>{
         return(
             <div className="leftbar default_light__leftbar">
                 <Selector stateHandler={this.handleSelectionChange}/>
-                <LeftBarContent whichPage={this.state.RenderMode} showPage={this.state.showContent}/>
-                <div className="leftbar__content__split_handler" id="leftbar_splitter"></div>
             </div>
         )
     }

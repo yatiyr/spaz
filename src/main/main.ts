@@ -6,9 +6,6 @@ declare const MAIN_WINDOW_WEBPACK_ENTRY: any;
 declare const LOADING_WINDOW_WEBPACK_ENTRY: any;
 
 const path = require('path');
-const image = nativeImage.createFromPath(__dirname + 'public/img/icons/spaz_icon_colored.png');
-
-image.setTemplateImage(true);
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
@@ -32,7 +29,7 @@ const createWindow = () => {
     minWidth: 600,
     backgroundColor: '#000',
     show: false,
-    icon: image
+    //icon: path.join(__dirname, 'public/img/icons/spaz_icon_colored.ico')
   })
 
 
