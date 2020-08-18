@@ -8,6 +8,7 @@ import Leftbar from './leftbar/Leftbar';
 import Rightbar from './rightbar/Rightbar';
 import SplitPane, {Pane} from "react-split-pane";
 import LeftBarContent from './leftbar/LeftbarContent'
+import { ThemeContext } from "../../context/Contexts";
 
 type State = {
     RenderMode: string;
@@ -32,27 +33,29 @@ class Main extends Component<Props, State> {
     }
 
     public handleSelectionChange(showPage, whichPage) {
-        this.setState({RenderMode: whichPage, showContent: showPage}, ()=> {
-            console.log("states passed", showPage + " " + whichPage);
-        })
+        this.setState({RenderMode: whichPage, showContent: showPage})
     }
 
     public element() {
 
         if(this.state.showContent) {
             return (
-                <div className="main">
-                    <Leftbar stateHandler={this.handleSelectionChange}/>
-                    <div className="splitPaneWrapper">
-                        <SplitPane resizerClassName="leftbar_main_resizer_default_light"
-                                   minSize={75}
-                                   maxSize={-200}>
-                            <LeftBarContent whichPage={this.state.RenderMode} showPage={this.state.showContent}/>
-                            <Eti/>                                                                             
-                        </SplitPane>
-                    </div>
-                    <Rightbar/>
-                </div>         
+                <ThemeContext.Consumer>
+                    { ({theme}) => (
+                        <div className="main">
+                            <Leftbar stateHandler={this.handleSelectionChange}/>
+                            <div className="splitPaneWrapper">
+                                <SplitPane resizerClassName={`${theme}__leftbar_main_resizer`}
+                                        minSize={75}
+                                        maxSize={-200}>
+                                    <LeftBarContent whichPage={this.state.RenderMode} showPage={this.state.showContent}/>
+                                    <Eti/>                                                                             
+                                </SplitPane>
+                            </div>
+                            <Rightbar/>
+                        </div>  
+                    )}
+                </ThemeContext.Consumer>       
             )
         }
         else {

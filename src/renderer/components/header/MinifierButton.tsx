@@ -8,7 +8,10 @@ import Shrink from '../../../../public/img/icons/module_icon.svg';
 
 const remote = require('electron').remote;
 
-class MinifierButton extends Component {
+type Props = {theme: string};
+type State = {}
+
+class MinifierButton extends Component<Props, State> {
 
     constructor(props) {
         super(props);
@@ -47,7 +50,7 @@ class MinifierButton extends Component {
 
         if(!window.isMaximized()) {
             return(
-                <div className="header__buttons__btnMinifier default_light__header__buttons__btnMinifier" onClick={this.handleMinify.bind(this)}>
+                <div className={`header__buttons__btnMinifier ${this.props.theme}__header__buttons__btnMinifier`} onClick={this.handleMinify.bind(this)}>
                     <div className="header__buttons__iconDiv">
                         <Shrink className="header__buttons__iconDiv__icon"/> 
                     </div>
@@ -56,7 +59,7 @@ class MinifierButton extends Component {
         }
         else {
             return(
-                <div className="header__buttons__btnMinifier default_light__header__buttons__btnMinifier" onClick={this.handleMinify.bind(this)}>
+                <div className={`header__buttons__btnMinifier ${this.props.theme}__header__buttons__btnMinifier`} onClick={this.handleMinify.bind(this)}>
                     <div className="header__buttons__iconDiv">
                         <Grow className="header__buttons__iconDiv__icon"/> 
                     </div>

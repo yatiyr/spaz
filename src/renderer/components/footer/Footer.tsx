@@ -2,6 +2,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {hot} from "react-hot-loader/root";
 import React, {Component} from 'react';
+import { ThemeContext } from "../../context/Contexts";
+
 const remote = require('electron').remote;
 
 type Props = {}
@@ -33,7 +35,11 @@ class Footer extends Component<Props, State> {
 
     render() {
         return(
-            <div className={`footer default_light__footer ${this.state.focused ? "footer__focused" : ""}`}>a</div>
+            <ThemeContext.Consumer>
+            { ({theme}) => (
+            <div className={`footer ${theme}__footer ${this.state.focused ? "footer__focused" : ""}`}>a</div>
+            )}
+            </ThemeContext.Consumer>
         )
     }
 }

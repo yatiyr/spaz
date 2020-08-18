@@ -10,6 +10,7 @@ import Search from '../../../../../public/img/icons/magnifier.svg';
 import User from '../../../../../public/img/icons/user.svg';
 import Settings from '../../../../../public/img/icons/settings.svg';
 import { TouchBarSlider } from "electron";
+import { ThemeContext } from "../../../context/Contexts";
 
 type Element = {
     active: boolean;
@@ -43,13 +44,18 @@ class Selector extends Component<Props, State> {
         if(element === this.state.Active) {
 
             // TODO: Second click functions taken from props to send parent component
+
             this.setState({Active: element, showContent: !this.state.showContent}, () => {
                 this.props.stateHandler(this.state.showContent, this.state.Active);
+                console.log(element);
+                console.log(this.state.showContent);
             });
         }
         else {
             this.setState({Active: element, showContent: true }, () => {
-                this.props.stateHandler(this.state.showContent, this.state.Active);
+                this.props.stateHandler(true, this.state.Active);
+                console.log(element);
+                console.log(this.state.showContent);
             });
         }
 
@@ -67,25 +73,29 @@ class Selector extends Component<Props, State> {
 
     render() {
 
-        return(            
-            <div className="leftbar__selector default_light__leftbar__selector">
-                <div className="selector__group">
-                    <div className={`leftbar__selector__element default_light__leftbar__selector__element ${this.handleSelectionStyle("FileTree")}`}  id="FileTree" onClick={() => this.setSelection("FileTree")}>
-                        <Explorer  className="leftbar__selector__element__icon"/>
-                    </div>
-                    <div className={`leftbar__selector__element default_light__leftbar__selector__element ${this.handleSelectionStyle("Find")}`} id="Find" onClick={() => this.setSelection("Find")}>
-                        <Search className="leftbar__selector__element__icon"/>
-                    </div>
-                </div>
-                <div className="selector__group">
-                    <div className="leftbar__selector__element default_light__leftbar__selector__element" id="User">
-                        <User className="leftbar__selector__element__icon"/>
-                    </div>
-                    <div className="leftbar__selector__element default_light__leftbar__selector__element" id="Settings">
-                        <Settings className="leftbar__selector__element__icon"/>
+        return(
+            <ThemeContext.Consumer>
+                { ({theme}) => (
+                    <div className={`leftbar__selector ${theme}__leftbar__selector`}>
+                        <div className="selector__group">
+                            <div className={`leftbar__selector__element ${theme}__leftbar__selector__element`}  id="FileTree" onClick={() => this.setSelection("FileTree")}>
+                                <Explorer  className="leftbar__selector__element__icon"/>
+                            </div>
+                            <div className={`leftbar__selector__element ${theme}__leftbar__selector__element`} id="Find" onClick={() => this.setSelection("Find")}>
+                                <Search className="leftbar__selector__element__icon"/>
+                            </div>
+                        </div>
+                        <div className="selector__group">
+                            <div className={`leftbar__selector__element ${theme}__leftbar__selector__element`} id="User">
+                                <User className="leftbar__selector__element__icon"/>
+                            </div>
+                            <div className={`leftbar__selector__element ${theme}__leftbar__selector__element`} id="Settings">
+                                <Settings className="leftbar__selector__element__icon"/>
+                            </div>                    
+                        </div>
                     </div>                    
-                </div>
-            </div>
+                )}
+            </ThemeContext.Consumer>         
         )
     }
 }

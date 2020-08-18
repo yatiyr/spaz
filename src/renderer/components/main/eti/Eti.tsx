@@ -8,6 +8,7 @@ import React, {Component, RefObject, Props, createRef} from 'react';
 import Cesium from './Cesium';
 import 'cesiumSource/Widgets/widgets.css';
 import SplitPane, {Pane} from 'react-split-pane';
+import { ThemeContext } from "../../../context/Contexts";
 
 const cesium = require('cesiumSource/Cesium');
 import { Viewer, CesiumInspector } from 'cesium';
@@ -37,29 +38,33 @@ class Eti extends Component {
         */
 
         return(
-            <div className="eti default_light__eti">
-                <div className="eti__header default_light__eti__header">
-                    eti header
-                </div>
-                <div className="splitPaneWrapper">
-                    <SplitPane style={{position: "relative"}} 
-                               split="horizontal" 
-                               primary="second" 
-                               maxSize="50%" 
-                               minSize={60} 
-                               pane2Style={{flex: "0 1 auto"}}
-                               resizerClassName="termint_eti_resizer_default_light">
-                        <div className="eti__container default_light__eti__container">
-                           sasadsadsd
+            <ThemeContext.Consumer>
+                { ({theme}) => (
+                    <div className={`eti ${theme}__eti`}>
+                        <div className={`eti__header ${theme}__eti__header`}>
+                            eti header
                         </div>
-                        <div className="eti__termint default_light__eti__termint" style={{flex: "0 1 auto"}}>
-                            <div>
-                            eti__termint
-                            </div>
+                        <div className="splitPaneWrapper">
+                            <SplitPane style={{position: "relative"}} 
+                                    split="horizontal" 
+                                    primary="second" 
+                                    maxSize="50%" 
+                                    minSize={60} 
+                                    pane2Style={{flex: "0 1 auto"}}
+                                    resizerClassName={`${theme}__termint_eti_resizer`}>
+                                <div className={`eti__container ${theme}__eti__container`}>
+                                sasadsadsd
+                                </div>
+                                <div className={`eti__termint ${theme}__eti__termint" style={{flex: "0 1 auto"}}`}>
+                                    <div>
+                                    eti__termint
+                                    </div>
+                                </div>
+                            </SplitPane>
                         </div>
-                    </SplitPane>
-                </div>
-            </div>
+                    </div>
+                )}
+            </ThemeContext.Consumer>
         )
     }
 

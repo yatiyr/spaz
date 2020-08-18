@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {hot} from "react-hot-loader/root";
 import React, {Component} from 'react';
-
+import { ThemeContext } from "../../../context/Contexts";
 
 type State = {
 
@@ -25,11 +25,15 @@ class LeftbarContent extends Component<Props, State> {
 
         if(this.props.showPage) {
             return (
-                <div className="leftbar__content default_light__leftbar__content">
-                    <div className="leftbar__content__data">
-                        {this.props.whichPage}
-                    </div>
-                </div>            
+                <ThemeContext.Consumer>
+                    { ({theme} ) => (
+                        <div className={`leftbar__content ${theme}__leftbar__content`}>
+                            <div className="leftbar__content__data">
+                                {this.props.whichPage}
+                            </div>
+                        </div>    
+                    )}
+                </ThemeContext.Consumer>        
             )
         }
         else {

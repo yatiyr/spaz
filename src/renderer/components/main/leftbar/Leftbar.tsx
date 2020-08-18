@@ -2,9 +2,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {hot} from "react-hot-loader/root";
 import React, {Component} from 'react';
-
 import Selector from './Selector';
-import LeftBarContent from './LeftbarContent'
+import { ThemeContext } from "../../../context/Contexts";
 
 
 type State = {
@@ -40,9 +39,13 @@ class Leftbar extends Component<Props, State>{
 
     render() {
         return(
-            <div className="leftbar default_light__leftbar">
-                <Selector stateHandler={this.handleSelectionChange}/>
-            </div>
+            <ThemeContext.Consumer>
+                { ({theme}) => (
+                    <div className={`leftbar ${theme}__leftbar`}>
+                        <Selector stateHandler={this.handleSelectionChange}/>
+                    </div>
+                )}
+            </ThemeContext.Consumer>
         )
     }
 }

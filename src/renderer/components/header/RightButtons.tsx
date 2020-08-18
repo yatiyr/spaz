@@ -10,7 +10,16 @@ import MinifierButton from './MinifierButton';
 const remote = require('electron').remote;
 
 
-class RightButtons extends Component {
+type Props = {theme: string};
+type State = {};
+
+class RightButtons extends Component<Props, State> {
+
+    constructor(props) {
+        super(props);
+        this.state = {}
+        
+    }
 
     public handleMinimize() {
         var window = remote.getCurrentWindow();
@@ -29,13 +38,13 @@ class RightButtons extends Component {
     render() {
         return(
             <div className="header__buttons">
-                <div className="header__buttons__btnMinimizer default_light__header__buttons__btnMinimizer">
+                <div className={`header__buttons__btnMinimizer ${this.props.theme}__header__buttons__btnMinimizer`}>
                     <div className="header__buttons__iconDiv" onClick={this.handleMinimize}>
                         <Minimize className="header__buttons__iconDiv__icon"/> 
                     </div>
                 </div>
-                <MinifierButton ref="minifierBtn"/>
-                <div className="header__buttons__btnClose default_light__header__buttons__btnClose">
+                <MinifierButton ref="minifierBtn" theme={this.props.theme}/>
+                <div className={`header__buttons__btnClose ${this.props.theme}__header__buttons__btnClose`}>
                     <div className="header__buttons__iconDiv" onClick={this.handleClose}>
                         <Close className="header__buttons__iconDiv__icon"/> 
                     </div>
