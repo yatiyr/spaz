@@ -39,27 +39,7 @@ class Selector extends Component<Props, State> {
 
 
     public setSelection(element) {
-
-        // If element is clicked again
-        if(element === this.state.Active) {
-
-            // TODO: Second click functions taken from props to send parent component
-
-            this.setState({Active: element, showContent: !this.state.showContent}, () => {
-                this.props.stateHandler(this.state.showContent, this.state.Active);
-                console.log(element);
-                console.log(this.state.showContent);
-            });
-        }
-        else {
-            this.setState({Active: element, showContent: true }, () => {
-                this.props.stateHandler(true, this.state.Active);
-                console.log(element);
-                console.log(this.state.showContent);
-            });
-        }
-
-
+        this.props.stateHandler(element);
     }
 
     public handleSelectionStyle(element) {

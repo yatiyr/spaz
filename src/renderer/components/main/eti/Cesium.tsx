@@ -46,7 +46,7 @@ class Cesium extends Component {
     render() {
         return(
                 <div className="eti__container" id="container">
-                    <div style={{width: "100%", height: "100%"}} id='cesiumContainer' ref={this.cesiumContainer} />
+                    <div style={{width: "100%", height: "100%", position: "absolute"}} id='cesiumContainer' ref={this.cesiumContainer} />
                 </div>
         )
     }

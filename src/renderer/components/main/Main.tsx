@@ -29,11 +29,22 @@ class Main extends Component<Props, State> {
             showContent: true,
         }
 
-        this.handleSelectionChange = this.handleSelectionChange.bind(this);
+        this.setSelection = this.setSelection.bind(this);
     }
 
-    public handleSelectionChange(showPage, whichPage) {
-        this.setState({RenderMode: whichPage, showContent: showPage})
+    public setSelection(element) {
+
+        // If element is clicked again
+        if(element === this.state.RenderMode) {
+            this.setState({RenderMode: element, showContent: !this.state.showContent}, () => {
+                console.log(this.state);
+            })
+        }
+        else {
+            this.setState({RenderMode: element, showContent: this.state.showContent}, () => {
+                console.log(this.state);
+            })
+        }
     }
 
     public element() {
@@ -43,7 +54,7 @@ class Main extends Component<Props, State> {
                 <ThemeContext.Consumer>
                     { ({theme}) => (
                         <div className="main">
-                            <Leftbar stateHandler={this.handleSelectionChange}/>
+                            <Leftbar stateHandler={this.setSelection}/>
                             <div className="splitPaneWrapper">
                                 <SplitPane resizerClassName={`${theme}__leftbar_main_resizer`}
                                         minSize={75}
@@ -61,7 +72,7 @@ class Main extends Component<Props, State> {
         else {
             return (
                 <div className="main">
-                    <Leftbar stateHandler={this.handleSelectionChange}/>
+                    <Leftbar stateHandler={this.setSelection}/>
                     <Eti/>
                     <Rightbar/>
                 </div>  

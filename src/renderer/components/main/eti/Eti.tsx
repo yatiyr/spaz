@@ -48,13 +48,14 @@ class Eti extends Component {
                             <SplitPane style={{position: "relative"}} 
                                     split="horizontal" 
                                     primary="second" 
-                                    maxSize="50%" 
-                                    minSize={60} 
+                                    maxSize={-30} 
+                                    minSize={60}
+                                    defaultSize={100}
                                     pane2Style={{flex: "0 1 auto"}}
                                     resizerClassName={`${theme}__termint_eti_resizer`}>
-                                <div className={`eti__container ${theme}__eti__container`}>
-                                sasadsadsd
-                                </div>
+
+                                <Cesium/>
+
                                 <div className={`eti__termint ${theme}__eti__termint" style={{flex: "0 1 auto"}}`}>
                                     <div>
                                     eti__termint

@@ -28,7 +28,6 @@ class App extends Component<Props, State> {
         themeSettings: {theme: "cinar_light",
                         toggleTheme: name}
       }));
-      console.log(this.state);
     };
 
     this.state = {

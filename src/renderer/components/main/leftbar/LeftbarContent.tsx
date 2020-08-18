@@ -17,8 +17,6 @@ class LeftbarContent extends Component<Props, State> {
 
     constructor(props) {
         super(props);
-
-        console.log(this.props)
     }
 
     public element() {
