@@ -1,23 +1,23 @@
-.cinar_light {
+.default_dark {
 
     &__leftbar {
-        background-color: $leftbar-background_cinar_light;
+        background-color: $leftbar-background_default_dark;
     
         &__selector {
-            background-color: $leftbar-selector-background_cinar_light;
+            background-color: $leftbar-selector-background_default_dark;
     
     
     
             &__element {
-                fill: $leftbar-selector-element-fill_cinar_light;
+                fill: $leftbar-selector-element-fill_default_dark;
     
                 &:hover {
-                    fill: $leftbar-selector-element-hover-fill_cinar_light;
-                    background-color: $leftbar-selector-element-hover-background_cinar_light;
+                    fill: $leftbar-selector-element-hover-fill_default_dark;
+                    background-color: $leftbar-selector-element-hover-background_default_dark;
                 }
     
                 &:active {
-                    background-color: $leftbar-selector-element-active-background_cinar_light;
+                    background-color: $leftbar-selector-element-active-background_default_dark;
                 }
                 
     
@@ -30,11 +30,11 @@
     
         &__content {
 
-            background-color:$leftbar-selector-content-background_cinar_light;
+            background-color:$leftbar-selector-content-background_default_dark;
 
             &__data {
-                background-color: $leftbar-selector-content-data-background_cinar_light;
-                color: $leftbar-selector-content-data-font_cinar_light;
+                background-color: $leftbar-selector-content-data-background_default_dark;
+                color: $leftbar-selector-content-data-font_default_dark;
             }
     
             

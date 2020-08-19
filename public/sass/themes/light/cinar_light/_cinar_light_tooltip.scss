@@ -1,0 +1,64 @@
+// TOOLTIP RIGHT
+.cinar_light__tooltipRight {
+
+    & .tooltiptext {
+        background-color: $tooltip-background_cinar_light;
+        color: $tooltip-font_cinar_light;
+        box-shadow: 3px 3px 3px rgba(#000, 0.5);
+        font-family: "Ubuntu-Regular";
+        font-size: 1.2rem;
+    }
+
+    & .tooltiptext::after {
+        border-color: transparent $tooltip-background_cinar_light transparent transparent;
+    }
+}
+
+// TOOLTIP LEFT
+.cinar_light__tooltipLeft {
+
+    & .tooltiptext {
+
+        background-color: $tooltip-background_cinar_light;
+        color: $tooltip-font_cinar_light;
+        box-shadow: 3px 3px 3px rgba(#000, 0.5);
+        font-family: "Ubuntu-Regular";
+        font-size: 1.2rem;
+    }
+
+    & .tooltiptext::after {
+        border-color: transparent transparent transparent $tooltip-background_cinar_light;
+    }
+}
+
+// TOOLTIP DOWN
+.cinar_light__tooltipDown {
+
+    & .tooltiptext {
+        background-color: $tooltip-background_cinar_light;
+        color: $tooltip-font_cinar_light;
+        box-shadow: 3px 3px 3px rgba(#000, 0.5);
+        font-family: "Ubuntu-Regular";
+        font-size: 1.2rem;
+    }
+
+    & .tooltiptext::after {
+        border-color: transparent transparent $tooltip-background_cinar_light transparent;
+    }
+}
+
+// TOOLTIP UP
+.cinar_light__tooltipUp {
+
+    & .tooltiptext {
+        background-color: $tooltip-background_cinar_light;
+        color: $tooltip-font_cinar_light;
+        box-shadow: 3px 3px 3px rgba(#000, 0.5);
+        font-family: "Ubuntu-Regular";
+        font-size: 1.2rem;
+    }
+
+    & .tooltiptext::after {
+        border-color: $tooltip-background_cinar_light transparent transparent transparent;
+    }
+}

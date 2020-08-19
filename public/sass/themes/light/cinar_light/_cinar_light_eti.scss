@@ -3,23 +3,23 @@
 
     &__eti {
 
-        background-color: $primary-cinar_light-lighter-1;
+        background-color: $eti-background_cinar_light;
 
         &__header {
-            background-color: $primary-cinar_light-lighter-1;
-            color: $font-cinar_light;
+            background-color: $eti-header-background_cinar_light;
+            color: $eti-header-font_cinar_light;
         }
 
         &__container {
-            background-color: $primary-cinar_light-lighter-1;
-            color: $font-cinar_light-dark-1;
+            background-color: $eti-container-background_cinar_light;
+            color: $eti-container-font_cinar_light;
         }
 
         &__termint {
-            background-color: $primary-cinar_light-lighter-1;
-            color: $font-cinar_light-dark-1;
+            background-color: $eti-termint-background_cinar_light;
+            color:  $eti-termint-font_cinar_light;
             &__header {
-                background-color: $primary-cinar_light-lighter-1;
+                background-color: $eti-termint-header-background_cinar_light;
             }
         }
 

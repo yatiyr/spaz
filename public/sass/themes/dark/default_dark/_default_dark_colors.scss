@@ -1,0 +1,135 @@
+$button-close-default_dark: #ff0077;
+$button-close-hover-fill-default_dark: #fff;
+
+$color-logo-default_dark: #ff5e00;
+
+$primary-default_dark-lighter-1:#ffffff;
+$primary-default_dark:   #ffebd7;
+$primary-default_dark-1: #ffe2c4;
+$primary-default_dark-2: #ffd8a6;
+$primary-default_dark-3: #ffcb8c;
+$primary-default_dark-4: #ffbc65;
+$primary-default_dark-5: #ffac40;
+$primary-default_dark-6: #fa8e00;
+$primary-default_dark-selection: #7a4500;
+
+$secondary-default_dark: #d3fff0;
+$secondary-default_dark-1: #bdfce7;
+$secondary-default_dark-2: #95ffdc;
+$secondary-default_dark-3: #88ffd7;
+
+$font-default_dark: #4d4d4d;
+$font-default_dark-dark-1: #383838;
+$font-default_dark-dark-2: #2e2e2e;
+
+$svg-default_dark: #b6a188;
+$svg-default_dark-1: #948571;
+$svg-default_dark-2: #7c6e5b;
+$svg-default_dark-3: #5f5547;
+
+
+// HEADER COLORS
+
+$header-background_default_dark: #ffd8a6;
+
+    // LOGO DIV LOGO
+    $header-logo-fill_default_dark: #ff5e00;
+
+    // PROPERTIES
+        // PROP
+        $header-properties-prop-font_default_dark: #4d4d4d;
+        $header-properties-prop-hoverandfocus-background_default_dark: #ffcb8c;
+        $header-properties-prop-hoverandfocus-font_default_dark: #383838;
+
+        // HEADING
+        $header-properties-heading-font_default_dark: #4d4d4d;
+
+        // BUTTONS
+
+            // BUTTON CLOSE
+            $header-properties-buttons-button-close-fill_default_dark: #2e2e2e;
+            $header-properties-buttons-button-close-hover-fill_default_dark: #fff;
+            $header-properties-buttons-button-close-hover-background_default_dark: #ff0077;
+
+
+            // BUTTON MINIMIZER
+            $header-properties-buttons-button-minimizer-fill_default_dark: #2e2e2e;
+            $header-properties-buttons-button-minimizer-hover-fill_default_dark: #2e2e2e;
+            $header-properties-buttons-button-minimizer-hover-background-color: #ffcb8c;
+
+            // BUTTON MINIFIER
+            $header-properties-buttons-button-minifier-fill_default_dark: #2e2e2e;
+            $header-properties-buttons-button-minifier-hover-fill_default_dark: #2e2e2e;
+            $header-properties-buttons-button-minifier-hover-background-color: #ffcb8c;
+            
+
+// MAIN COLORS
+
+    // LEFTBAR
+    $leftbar-background_default_dark: #ffebd7;
+
+        // SELECTOR
+        $leftbar-selector-background_default_dark: #ffe2c4;
+
+            // ELEMENT
+            $leftbar-selector-element-fill_default_dark: #b6a188;
+            $leftbar-selector-element-hover-fill_default_dark: #7c6e5b;
+            $leftbar-selector-element-hover-background_default_dark: #ffcb8c;
+            $leftbar-selector-element-active-background_default_dark: #ffbc65;
+
+                // MODIFIER
+                    // TODO: SIMDILIK BOS
+
+            // CONTENT
+            $leftbar-selector-content-background_default_dark: #ffebd7;
+
+                // DATA
+                $leftbar-selector-content-data-background_default_dark: #ffebd7;
+                $leftbar-selector-content-data-font_default_dark: #2e2e2e;
+                // HEADER
+
+                // ELEMENT
+
+                
+        
+    // ETI
+    $eti-background_default_dark: #ffffff;
+
+        // HEADER
+        $eti-header-background_default_dark: #ffffff;
+        $eti-header-font_default_dark: #4d4d4d;
+
+        // CONTAINER
+        $eti-container-background_default_dark: #ffffff;
+        $eti-container-font_default_dark: #383838;
+
+        // TERMINT
+        $eti-termint-background_default_dark: #ffffff;
+        $eti-termint-font_default_dark: #383838;
+
+            // HEADER
+            $eti-termint-header-background_default_dark: #ffffff;
+
+    // RIGHTBAR
+    $rightbar-background_default_dark: #ffebd7;
+    $rightbar-font_default_dark: #2e2e2e;
+
+// FOOTER COLORS
+$footer-background_default_dark: #fa8e00;
+
+// UTIL COLORS
+
+    // DROPDOWN
+    $dropdown-background_default_dark: #ffebd7;
+    $dropdown-font_default_dark: #2e2e2e;
+
+    // ELEMENT
+    $dropdown-element-hover-background_default_dark: #ffcb8c;
+
+    // TOOLTIP
+    $tooltip-background_default_dark: #000;
+    $tooltip-font_default_dark: #fff;
+
+    // RESIZER
+    $eti-termint-resizer-background_default_dark: #d8d8d8;
+    $leftbar-resizer-background_default_dark: #ffebd7;

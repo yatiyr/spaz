@@ -48,6 +48,7 @@ class Properties extends Component<Props, State> {
                         <div className="dropdownElement"><div className="item">New File</div><div className="item">Ctrl+N</div></div>
                         <div className="dropdownElement"><div className="item">Nesıoea File</div><div className="item">Ctrl+N</div></div>
                         <div className="dropdownElement"><div className="item">Nsadsadsasdasdd</div><div className="item">Ct+N</div></div>
+                        <div className="dropdownElement"><div className="item">Nsadsadsassadasdd</div></div>
                     </ul>
                     <div className="header__properties__prop__name">
                         File

@@ -1,9 +1,9 @@
-.default_light__dropdown {
+.cinar_light__dropdown {
     position: relative;
 
     & .dropdownbox {
-        background-color: $dropdown-background_default_light;
-        color: $dropdown-font_default_light;
+        background-color: $dropdown-background_cinar_light;
+        color: $dropdown-font_cinar_light;
         box-shadow: 3px 0px 3px rgba(#000, 0.3),
                     -3px 0px 3px rgba(#000, 0.3),
                     0px 3px 3px rgba(#000, 0.5);
@@ -13,7 +13,7 @@
         & .dropdownElement {
 
             &:hover {
-                background-color: $dropdown-element-hover-background_default_light;
+                background-color: $dropdown-element-hover-background_cinar_light;
             }
         }
     }

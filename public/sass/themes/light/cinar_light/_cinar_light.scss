@@ -6,6 +6,8 @@
 @import "cinar_light_rightbar";
 @import "cinar_light_footer";
 @import "cinar_light_resizers";
+@import "cinar_light_tooltip";
+@import "cinar_light_dropdown";
 
 .cinar_light__eti *::selection {
     background-color: $primary-cinar_light-selection;

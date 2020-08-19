@@ -3,23 +3,23 @@
 
     &__eti {
 
-        background-color: $primary-default_light-lighter-1;
+        background-color: $eti-background_default_light;
 
         &__header {
-            background-color: $primary-default_light-lighter-1;
-            color: $font-default_light;
+            background-color: $eti-header-background_default_light;
+            color: $eti-header-font_default_light;
         }
 
         &__container {
-            background-color: $primary-default_light-lighter-1;
-            color: $font-default_light-dark-1;
+            background-color: $eti-container-background_default_light;
+            color: $eti-container-font_default_light;
         }
 
         &__termint {
-            background-color: $primary-default_light-lighter-1;
-            color: $font-default_light-dark-1;
+            background-color: $eti-termint-background_default_light;
+            color:  $eti-termint-font_default_light;
             &__header {
-                background-color: $primary-default_light-lighter-1;
+                background-color: $eti-termint-header-background_default_light;
             }
         }
 

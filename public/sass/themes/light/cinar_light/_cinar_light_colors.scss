@@ -1,17 +1,17 @@
 $button-close-cinar_light: #ff0077;
 $button-close-hover-fill-cinar_light: #fff;
 
-$color-logo-cinar_light: #553a00;
+$color-logo-cinar_light: #ff5e00;
 
 $primary-cinar_light-lighter-1:#ffffff;
-$primary-cinar_light:   #daffda;
-$primary-cinar_light-1: #ceffce;
-$primary-cinar_light-2: #bfffbf;
-$primary-cinar_light-3: #9aff9a;
-$primary-cinar_light-4: #86ff86;
-$primary-cinar_light-5: #76ff76;
-$primary-cinar_light-6: #67ff67;
-$primary-cinar_light-selection: #008000;
+$primary-cinar_light:   #ffebd7;
+$primary-cinar_light-1: #ffe2c4;
+$primary-cinar_light-2: #ffd8a6;
+$primary-cinar_light-3: #ffcb8c;
+$primary-cinar_light-4: #ffbc65;
+$primary-cinar_light-5: #ffac40;
+$primary-cinar_light-6: #fa8e00;
+$primary-cinar_light-selection: #7a4500;
 
 $secondary-cinar_light: #d3fff0;
 $secondary-cinar_light-1: #bdfce7;
@@ -22,10 +22,114 @@ $font-cinar_light: #4d4d4d;
 $font-cinar_light-dark-1: #383838;
 $font-cinar_light-dark-2: #2e2e2e;
 
-$svg-cinar_light: #8db688;
-$svg-cinar_light-1: #7ea37a;
-$svg-cinar_light-2: #6b8b68;
-$svg-cinar_light-3: #577055;
+$svg-cinar_light: #b6a188;
+$svg-cinar_light-1: #948571;
+$svg-cinar_light-2: #7c6e5b;
+$svg-cinar_light-3: #5f5547;
 
-$termint_eti_resizer_cinar_light: #d8d8d8;
-$leftbar_main_resizer_cinar_light: #47474700;
+
+// HEADER COLORS
+
+$header-background_cinar_light: #ffd8a6;
+
+    // LOGO DIV LOGO
+    $header-logo-fill_cinar_light: #ff5e00;
+
+    // PROPERTIES
+        // PROP
+        $header-properties-prop-font_cinar_light: #4d4d4d;
+        $header-properties-prop-hoverandfocus-background_cinar_light: #ffcb8c;
+        $header-properties-prop-hoverandfocus-font_cinar_light: #383838;
+
+        // HEADING
+        $header-properties-heading-font_cinar_light: #4d4d4d;
+
+        // BUTTONS
+
+            // BUTTON CLOSE
+            $header-properties-buttons-button-close-fill_cinar_light: #2e2e2e;
+            $header-properties-buttons-button-close-hover-fill_cinar_light: #fff;
+            $header-properties-buttons-button-close-hover-background_cinar_light: #ff0077;
+
+
+            // BUTTON MINIMIZER
+            $header-properties-buttons-button-minimizer-fill_cinar_light: #2e2e2e;
+            $header-properties-buttons-button-minimizer-hover-fill_cinar_light: #2e2e2e;
+            $header-properties-buttons-button-minimizer-hover-background-color: #ffcb8c;
+
+            // BUTTON MINIFIER
+            $header-properties-buttons-button-minifier-fill_cinar_light: #2e2e2e;
+            $header-properties-buttons-button-minifier-hover-fill_cinar_light: #2e2e2e;
+            $header-properties-buttons-button-minifier-hover-background-color: #ffcb8c;
+            
+
+// MAIN COLORS
+
+    // LEFTBAR
+    $leftbar-background_cinar_light: #ffebd7;
+
+        // SELECTOR
+        $leftbar-selector-background_cinar_light: #ffe2c4;
+
+            // ELEMENT
+            $leftbar-selector-element-fill_cinar_light: #b6a188;
+            $leftbar-selector-element-hover-fill_cinar_light: #7c6e5b;
+            $leftbar-selector-element-hover-background_cinar_light: #ffcb8c;
+            $leftbar-selector-element-active-background_cinar_light: #ffbc65;
+
+                // MODIFIER
+                    // TODO: SIMDILIK BOS
+
+            // CONTENT
+            $leftbar-selector-content-background_cinar_light: #ffebd7;
+
+                // DATA
+                $leftbar-selector-content-data-background_cinar_light: #ffebd7;
+                $leftbar-selector-content-data-font_cinar_light: #2e2e2e;
+                // HEADER
+
+                // ELEMENT
+
+                
+        
+    // ETI
+    $eti-background_cinar_light: #ffffff;
+
+        // HEADER
+        $eti-header-background_cinar_light: #ffffff;
+        $eti-header-font_cinar_light: #4d4d4d;
+
+        // CONTAINER
+        $eti-container-background_cinar_light: #ffffff;
+        $eti-container-font_cinar_light: #383838;
+
+        // TERMINT
+        $eti-termint-background_cinar_light: #ffffff;
+        $eti-termint-font_cinar_light: #383838;
+
+            // HEADER
+            $eti-termint-header-background_cinar_light: #ffffff;
+
+    // RIGHTBAR
+    $rightbar-background_cinar_light: #ffebd7;
+    $rightbar-font_cinar_light: #2e2e2e;
+
+// FOOTER COLORS
+$footer-background_cinar_light: #fa8e00;
+
+// UTIL COLORS
+
+    // DROPDOWN
+    $dropdown-background_cinar_light: #ffebd7;
+    $dropdown-font_cinar_light: #2e2e2e;
+
+    // ELEMENT
+    $dropdown-element-hover-background_cinar_light: #ffcb8c;
+
+    // TOOLTIP
+    $tooltip-background_cinar_light: #000;
+    $tooltip-font_cinar_light: #fff;
+
+    // RESIZER
+    $eti-termint-resizer-background_cinar_light: #d8d8d8;
+    $leftbar-resizer-background_cinar_light: #ffebd7;

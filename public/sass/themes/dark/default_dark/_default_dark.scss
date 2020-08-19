@@ -1,2 +1,15 @@
 /*----IMPORT COMPONENTS----*/
-@import "header/default_dark_header"
+@import "default_dark_colors";
+@import "default_dark_header";
+@import "default_dark_leftbar";
+@import "default_dark_eti";
+@import "default_dark_rightbar";
+@import "default_dark_footer";
+@import "default_dark_resizers";
+@import "default_dark_tooltip";
+@import "default_dark_dropdown";
+
+.default_dark__eti *::selection {
+    background-color: $primary-default_dark-selection;
+    color: $color-white;
+}

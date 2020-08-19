@@ -1,0 +1,27 @@
+.default_dark {
+    // ETI (EDITOR + TERMINAL + INTERPRETER)
+
+    &__eti {
+
+        background-color: $eti-background_default_dark;
+
+        &__header {
+            background-color: $eti-header-background_default_dark;
+            color: $eti-header-font_default_dark;
+        }
+
+        &__container {
+            background-color: $eti-container-background_default_dark;
+            color: $eti-container-font_default_dark;
+        }
+
+        &__termint {
+            background-color: $eti-termint-background_default_dark;
+            color:  $eti-termint-font_default_dark;
+            &__header {
+                background-color: $eti-termint-header-background_default_dark;
+            }
+        }
+
+    }
+}

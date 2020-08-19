@@ -1,0 +1,73 @@
+.default_dark {
+
+    &__header {
+        background-color: $header-background_default_dark;
+
+        &__logoDiv__logo {
+            fill: $header-logo-fill_default_dark;
+        }
+
+        &__properties {
+
+            &__prop {
+                background-color: inherit;
+                color: $header-properties-prop-font_default_dark;
+
+                &:hover, &:focus {
+                    background-color: $header-properties-prop-hoverandfocus-background_default_dark;
+                    color: $header-properties-prop-hoverandfocus-font_default_dark;
+                }
+
+                // TODO: CONTENT FLEX OLARAK VE ELEMANLAR DIV OLARAK DEGISTIRILECK
+                &__content {
+                    background-color: $primary-default_dark-2;
+
+                    &__item {
+                        color:  $font-default_dark-dark-2;
+
+                        &:hover {
+                            background-color: $primary-default_dark-1;
+                        }
+                    }
+                }               
+            }
+        }
+
+        &__heading {
+            color: $header-properties-heading-font_default_dark;
+        }
+
+        &__buttons {
+
+            &__btnClose {
+                fill: $header-properties-buttons-button-close-fill_default_dark;
+                background-color: inherit;
+
+                &:hover {
+                    fill: $header-properties-buttons-button-close-hover-fill_default_dark;
+                    background-color: $header-properties-buttons-button-close-hover-background_default_dark;
+                } 
+            }
+
+            &__btnMinimizer {
+                fill: $header-properties-buttons-button-minimizer-fill_default_dark;
+                background-color: inherit;
+
+                &:hover {
+                    fill: $header-properties-buttons-button-minimizer-hover-fill_default_dark;
+                    background-color: $header-properties-buttons-button-minimizer-hover-background-color;
+                } 
+            }
+
+            &__btnMinifier {
+                fill: $header-properties-buttons-button-minifier-fill_default_dark;
+                background-color: inherit;
+
+                &:hover {
+                    fill: $header-properties-buttons-button-minifier-hover-fill_default_dark;
+                    background-color: $header-properties-buttons-button-minifier-hover-background-color;
+                } 
+            }
+        }
+    }
+}
