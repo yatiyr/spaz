@@ -41,7 +41,7 @@ class Main extends Component<Props, State> {
             })
         }
         else {
-            this.setState({RenderMode: element, showContent: this.state.showContent}, () => {
+            this.setState({RenderMode: element, showContent: true}, () => {
                 console.log(this.state);
             })
         }
