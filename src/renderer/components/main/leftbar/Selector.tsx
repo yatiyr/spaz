@@ -58,18 +58,22 @@ class Selector extends Component<Props, State> {
                 { ({theme}) => (
                     <div className={`leftbar__selector ${theme}__leftbar__selector`}>
                         <div className="selector__group">
-                            <div className={`leftbar__selector__element ${theme}__leftbar__selector__element`}  id="FileTree" onClick={() => this.setSelection("FileTree")}>
+                            <div className={`leftbar__selector__element ${theme}__leftbar__selector__element tooltipRight ${theme}__tooltipRight`}  id="FileTree" onClick={() => this.setSelection("FileTree")}>
+                                <span className="tooltiptext">File Tree</span>
                                 <Explorer  className="leftbar__selector__element__icon"/>
                             </div>
-                            <div className={`leftbar__selector__element ${theme}__leftbar__selector__element`} id="Find" onClick={() => this.setSelection("Find")}>
+                            <div className={`leftbar__selector__element ${theme}__leftbar__selector__element tooltipRight ${theme}__tooltipRight`} id="Find" onClick={() => this.setSelection("Find")}>
+                                <span className="tooltiptext">Find</span>
                                 <Search className="leftbar__selector__element__icon"/>
                             </div>
                         </div>
                         <div className="selector__group">
-                            <div className={`leftbar__selector__element ${theme}__leftbar__selector__element`} id="User">
+                            <div className={`leftbar__selector__element ${theme}__leftbar__selector__element tooltipRight ${theme}__tooltipRight`} id="User">
+                                <span className="tooltiptext">User</span>
                                 <User className="leftbar__selector__element__icon"/>
                             </div>
-                            <div className={`leftbar__selector__element ${theme}__leftbar__selector__element`} id="Settings">
+                            <div className={`leftbar__selector__element ${theme}__leftbar__selector__element tooltipRight ${theme}__tooltipRight`} id="Settings">
+                                <span className="tooltiptext">Settings</span>
                                 <Settings className="leftbar__selector__element__icon"/>
                             </div>                    
                         </div>

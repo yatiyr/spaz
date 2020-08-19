@@ -1,0 +1,64 @@
+// TOOLTIP RIGHT
+.default_light__tooltipRight {
+
+    & .tooltiptext {
+        background-color: $tooltip-background_default_light;
+        color: $tooltip-font_default_light;
+        box-shadow: 3px 3px 3px rgba(#000, 0.5);
+        font-family: "Ubuntu-Regular";
+        font-size: 1.2rem;
+    }
+
+    & .tooltiptext::after {
+        border-color: transparent $tooltip-background_default_light transparent transparent;
+    }
+}
+
+// TOOLTIP LEFT
+.tooltipLeft {
+
+    & .tooltiptext {
+
+        background-color: $tooltip-background_default_light;
+        color: $tooltip-font_default_light;
+        box-shadow: 3px 3px 3px rgba(#000, 0.5);
+        font-family: "Ubuntu-Regular";
+        font-size: 1.2rem;
+    }
+
+    & .tooltiptext::after {
+        border-color: transparent transparent transparent $tooltip-background_default_light;
+    }
+}
+
+// TOOLTIP DOWN
+.tooltipDown {
+
+    & .tooltiptext {
+        background-color: $tooltip-background_default_light;
+        color: $tooltip-font_default_light;
+        box-shadow: 3px 3px 3px rgba(#000, 0.5);
+        font-family: "Ubuntu-Regular";
+        font-size: 1.2rem;
+    }
+
+    & .tooltiptext::after {
+        border-color: transparent transparent $tooltip-background_default_light transparent;
+    }
+}
+
+// TOOLTIP UP
+.tooltipUp {
+
+    & .tooltiptext {
+        background-color: $tooltip-background_default_light;
+        color: $tooltip-font_default_light;
+        box-shadow: 3px 3px 3px rgba(#000, 0.5);
+        font-family: "Ubuntu-Regular";
+        font-size: 1.2rem;
+    }
+
+    & .tooltiptext::after {
+        border-color: $tooltip-background_default_light transparent transparent transparent;
+    }
+}
