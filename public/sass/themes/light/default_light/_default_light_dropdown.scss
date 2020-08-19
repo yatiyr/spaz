@@ -1,0 +1,21 @@
+.default_light__dropdown {
+    position: relative;
+
+    & .dropdownbox {
+        background-color: $dropdown-background_default_light;
+        color: $dropdown-font_default_light;
+        box-shadow: 3px 0px 3px rgba(#000, 0.5),
+                    -3px 0px 3px rgba(#000, 0.5),
+                    0px 3px 3px rgba(#000, 0.5);
+        font-family: "Ubuntu-Regular";
+        font-size: 1.2rem;
+
+        & .dropdownElement {
+
+            &:hover {
+                background-color: orangered;
+            }
+        }
+    }
+
+}

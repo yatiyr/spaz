@@ -15,7 +15,7 @@
 }
 
 // TOOLTIP LEFT
-.tooltipLeft {
+.default_light__tooltipLeft {
 
     & .tooltiptext {
 
@@ -32,7 +32,7 @@
 }
 
 // TOOLTIP DOWN
-.tooltipDown {
+.default_light__tooltipDown {
 
     & .tooltiptext {
         background-color: $tooltip-background_default_light;
@@ -48,7 +48,7 @@
 }
 
 // TOOLTIP UP
-.tooltipUp {
+.default_light__tooltipUp {
 
     & .tooltiptext {
         background-color: $tooltip-background_default_light;

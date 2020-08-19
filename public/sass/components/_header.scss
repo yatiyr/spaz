@@ -6,6 +6,7 @@
     justify-items: start;
     align-items: stretch;
     -webkit-user-select: none;
+    z-index: 1;
     
     //font-weight: lighter;
     filter: brightness(0.90);
@@ -80,7 +81,7 @@
         text-align: center;
         justify-content: center;
         -webkit-app-region: drag;
-        height: 90%;
+        height: 60%;
 
         &__maximized {
             height: 100%;
