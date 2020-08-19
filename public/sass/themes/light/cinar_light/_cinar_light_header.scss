@@ -17,19 +17,7 @@
                     background-color: $header-properties-prop-hoverandfocus-background_cinar_light;
                     color: $header-properties-prop-hoverandfocus-font_cinar_light;
                 }
-
-                // TODO: CONTENT FLEX OLARAK VE ELEMANLAR DIV OLARAK DEGISTIRILECK
-                &__content {
-                    background-color: $primary-cinar_light-2;
-
-                    &__item {
-                        color:  $font-cinar_light-dark-2;
-
-                        &:hover {
-                            background-color: $primary-cinar_light-1;
-                        }
-                    }
-                }               
+             
             }
         }
 

@@ -16,20 +16,7 @@
                 &:hover, &:focus {
                     background-color: $header-properties-prop-hoverandfocus-background_default_light;
                     color: $header-properties-prop-hoverandfocus-font_default_light;
-                }
-
-                // TODO: CONTENT FLEX OLARAK VE ELEMANLAR DIV OLARAK DEGISTIRILECK
-                &__content {
-                    background-color: $primary-default_light-2;
-
-                    &__item {
-                        color:  $font-default_light-dark-2;
-
-                        &:hover {
-                            background-color: $primary-default_light-1;
-                        }
-                    }
-                }               
+                }              
             }
         }
 
