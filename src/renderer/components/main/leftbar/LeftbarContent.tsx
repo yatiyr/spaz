@@ -3,6 +3,7 @@
 import {hot} from "react-hot-loader/root";
 import React, {Component} from 'react';
 import { ThemeContext } from "../../../context/Contexts";
+import FileTree from './leftbarPages/FileTree';
 
 type State = {
 
@@ -28,6 +29,7 @@ class LeftbarContent extends Component<Props, State> {
                         <div className={`leftbar__content ${theme}__leftbar__content`}>
                             <div className={`leftbar__content__data ${theme}__leftbar__content__data`}>
                                 {this.props.whichPage}
+                                <FileTree/>
                             </div>
                         </div>    
                     )}

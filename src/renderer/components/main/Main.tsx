@@ -57,7 +57,7 @@ class Main extends Component<Props, State> {
                             <Leftbar stateHandler={this.setSelection}/>
                             <div className="splitPaneWrapper">
                                 <SplitPane resizerClassName={`${theme}__leftbar_main_resizer`}
-                                        minSize={75}
+                                        minSize={175}
                                         maxSize={-200}>
                                     <LeftBarContent whichPage={this.state.RenderMode} showPage={this.state.showContent}/>
                                     <Eti/>                                                                             

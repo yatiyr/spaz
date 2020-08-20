@@ -54,12 +54,12 @@ class Eti extends Component {
                                     pane2Style={{flex: "0 1 auto"}}
                                     resizerClassName={`${theme}__termint_eti_resizer`}>
 
-                                <Cesium/>
+                                <div className={`eti__container ${theme}__eti__container`}>
+                                    abcd
+                                </div>
 
-                                <div className={`eti__termint ${theme}__eti__termint" style={{flex: "0 1 auto"}}`}>
-                                    <div>
+                                <div style={{flex: "1 1 auto"}} className={`eti__termint ${theme}__eti__termint`}>
                                     eti__termint
-                                    </div>
                                 </div>
                             </SplitPane>
                         </div>

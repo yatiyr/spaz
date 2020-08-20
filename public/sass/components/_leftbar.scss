@@ -80,6 +80,8 @@
 
         // Selector spesific settings and heading
         &__data {
+            display: flex;
+            flex-direction: column;
             flex: 1 0 auto;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -87,6 +89,7 @@
             width: 100%;
             height: 100%;
             justify-self: end;
+            justify-content: flex-start;
         }
 
         &__header {
@@ -95,16 +98,6 @@
 
         &__element {
 
-        }
-
-        &__split_handler {
-            display: block;
-            height: 100%;
-            opacity: 0;
-            width: .5rem;
-            margin-left: -.5rem;
-            flex: 0 0 auto;
-            cursor: ew-resize;
         }
     }
 
