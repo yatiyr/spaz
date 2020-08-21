@@ -1,0 +1,54 @@
+.filetree {
+
+    &__row {
+
+        color: #fff;
+
+        &:hover {
+            background-color: #0300be;
+        }
+
+        &__namegroup {
+
+
+            &__indentation {
+
+                &__svg {
+
+                    fill: #fff;
+                }
+            }
+
+            &__symbol {
+
+                &__svg {
+
+                    fill: #fff;
+
+                    &__folderShrinked {
+                        fill: #fff;
+                    }
+
+                    &__folderExpanded {
+                        fill: #fff;
+                    }
+                }
+            }
+
+            &__name {
+
+            }
+
+        }
+
+
+        // TODO: DOLDUR
+        // FIXME: DAHA GUZEL AD BULUNCA 
+        // DEGISTIR!
+        &__modifier {
+
+        }
+    }
+
+
+}

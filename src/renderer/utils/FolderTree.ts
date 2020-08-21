@@ -34,20 +34,26 @@ export default class FolderTree {
     readDir(path, depth) {
         var fileArray: any[] = [];
 
-        electronFs.readdirSync(path).forEach(file => {
-            var stat = electronFs.statSync(`${path}\\${file}`);
 
-            if(stat.isDirectory()) {
-                var fileInfo = new FolderTree(`${path}\\${file}`, file, depth + 1, true);
-                fileArray.push(fileInfo);
-            }
-            else {
-                var fileInfo = new FolderTree(`${path}\\${file}`, file, depth + 1, false)
-                fileArray.push(fileInfo);
-            }
+            electronFs.readdirSync(path).forEach(file => {
 
-        })
+                try {
+                    var stat = electronFs.statSync(`${path}\\${file}`);
+        
+                    if(stat.isDirectory()) {
+                        var fileInfo = new FolderTree(`${path}\\${file}`, file, depth + 1, true);
+                        fileArray.push(fileInfo);
+                    }
+                    else {
+                        var fileInfo = new FolderTree(`${path}\\${file}`, file, depth + 1, false)
+                        fileArray.push(fileInfo);
+                    }
 
+                }
+                catch (error) {
+                    console.log(error);
+                }
+            })
         return fileArray;
     }
 }

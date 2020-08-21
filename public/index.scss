@@ -10,6 +10,7 @@
 @import "sass/components/eti";
 @import "sass/components/rightbar";
 @import "sass/components/splitPaneWrapper";
+@import "sass/components/filetree";
 
 // FONT IMPORTS
 @import "sass/fonts/fonts";
@@ -32,6 +33,9 @@
 @import "sass/typography/eti";
 @import "sass/typography/rightbar";
 @import "sass/typography/footer";
+@import "sass/typography/dropdown";
+@import "sass/typography/tooltip";
+@import "sass/typography/filetree";
 
 // REACT SPLIT
 @import "sass/reactSplit/reactSplit";

@@ -1,0 +1,84 @@
+.filetree {
+
+    &__row {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 2.3rem;
+        align-items: stretch;
+
+        &:hover {
+
+        }
+
+        &__namegroup {
+
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+            align-items: stretch;
+
+            //flex: 0 0 auto;
+
+            &__indentation {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: stretch;
+
+                &__svg {
+                    padding: 0rem 0.4rem 0rem 0.3rem;
+                    width: .09rem;
+                    height: 100%;
+                }
+            }
+
+            &__symbol {
+                align-self: center;
+                &__svg {
+                    align-self: center;
+                    padding: 0rem .8rem 0rem 0rem;
+                    width: .8rem;
+                    height: 1rem;
+                    transform: translateX(4rem);
+
+                    &__folderShrinked {
+                        align-self: center;
+                        padding: 0rem .5rem 0rem 0rem;
+                        width: 1rem;
+                        height: .5rem;
+                        transform: rotate(-90deg);
+                        transform-origin: 30% 30%;
+                    }
+
+                    &__folderExpanded {
+                        align-self: center;
+                        padding: 0rem .5rem 0rem 0rem;
+                        width: 1rem;
+                        height: .5rem;                  
+                    }
+                }
+
+            }
+
+            &__name {
+                align-self: center;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+        }
+
+
+        // TODO: DOLDUR
+        // FIXME: DAHA GUZEL AD BULUNCA 
+        // DEGISTIR!
+        &__modifier {
+
+        }
+    }
+
+
+}

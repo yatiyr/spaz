@@ -1,0 +1,26 @@
+.filetree {
+
+    &__row {
+        font-size: 1.17rem;
+        font-family: "Raleway-Regular";
+
+        &__namegroup {
+
+            &__name {
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+        }
+
+
+        // TODO: DOLDUR
+        // FIXME: DAHA GUZEL AD BULUNCA 
+        // DEGISTIR!
+        &__modifier {
+
+        }
+    }
+
+
+}

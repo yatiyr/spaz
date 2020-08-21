@@ -6,8 +6,8 @@ import {hot} from "react-hot-loader/root";
 import React, {Component} from 'react';
 import { WorkspaceContext } from "../../../../context/Contexts";
 import FolderTree from '../../../../utils/FolderTree';
-
-const {dialog, getCurrentWindow} = require('electron').remote;
+import File from './File';
+import Folder from './Folder';
 
 type State = {
     folderPath: string;
@@ -40,8 +40,13 @@ class FileTree extends Component<Props, State>{
             var fileTree = new FolderTree(path, dirName);
             fileTree.build();
             console.log(fileTree);
+            var id = 0;
+            var items = fileTree.items.map((node) => (
+                node.isDirectory ? <Folder path={node.path} node={node} id={id++}/> : <File path={node.path} node={node} id={id++}/>
+            ))
+
             return(
-                <div>{dirName}</div>
+                <div>{items}</div>
             )
         }
         else {

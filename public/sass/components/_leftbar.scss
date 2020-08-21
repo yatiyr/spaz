@@ -66,10 +66,12 @@
         display: flex;
         flex-direction: column;
         flex: 0 0 auto;
-        //overflow: hidden;
+        overflow: hidden;
         -webkit-user-select: none;
         justify-items: flex-end;
-
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        
         width: 100%;
         height: 100%;
 
@@ -83,13 +85,15 @@
             display: flex;
             flex-direction: column;
             flex: 1 0 auto;
-            overflow: hidden;
+            min-height: 0;
+            overflow: scroll;
             text-overflow: ellipsis;
             white-space: nowrap;
             width: 100%;
             height: 100%;
             justify-self: end;
             justify-content: flex-start;
+
         }
 
         &__header {
