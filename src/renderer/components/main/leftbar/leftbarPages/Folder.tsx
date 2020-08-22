@@ -23,7 +23,7 @@ class Folder extends Component<Props,State> {
         super(props);
 
         this.state = {
-            isExpanded: false
+            isExpanded: false,
         }
     }
 
@@ -34,13 +34,13 @@ class Folder extends Component<Props,State> {
         return(
             <ThemeContext.Consumer>
                 { ({theme}) => (
-                    <div className={`filetree__row ${theme}__filetree__row`}>
+                    <div className={`filetree__row ${theme}__filetree__row`} id={`${this.props.id}`}>
                         <div className={`filetree__row__namegroup ${theme}__filetree__row__namegroup`}>
                             <div className={`filetree__row__namegroup__indentation ${theme}__filetree__row__namegroup__indentation`}>
                                 <FolderIndentation className={`filetree__row__namegroup__indentation__svg ${theme}__filetree__row__namegroup__indentation__svg`}/>
                             </div>
                             <div className={`filetree__row__namegroup__symbol ${theme}__filetree__row__namegroup__symbol`} >
-                                <FolderSymbol className={`filetree__row__namegroup__symbol__svg__folderExpanded ${theme}__filetree__row__namegroup__symbol__svg__folderExpanded`}/>
+                                <FolderSymbol className={`filetree__row__namegroup__symbol__svg__folder${this.state.isExpanded ? "Expanded" : "Shrinked"} ${theme}__filetree__row__namegroup__symbol__svg__folder${this.state.isExpanded ? "Expanded" : "Shrinked"}`}/>
                             </div>
                             <span className={`filetree__row__namegroup__name ${theme}__filetree__row__namegroup__name`}>
                                 {this.props.node.name}

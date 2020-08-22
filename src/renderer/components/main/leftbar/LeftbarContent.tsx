@@ -29,7 +29,9 @@ class LeftbarContent extends Component<Props, State> {
                         <div className={`leftbar__content ${theme}__leftbar__content`}>
                             <div className={`leftbar__content__data ${theme}__leftbar__content__data`}>
                                 {this.props.whichPage}
+                                <div className="WorkspaceFolder">fsdfsd</div>
                                 <FileTree/>
+                                <div className="">asdasd</div>
                             </div>
                         </div>    
                     )}

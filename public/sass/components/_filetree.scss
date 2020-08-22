@@ -1,7 +1,48 @@
+
+.filetreeContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 auto;
+    min-height: 0;
+    overflow-y: scroll;
+}
+
 .filetree {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 auto;
+    min-height: 0;
+    //height: 100%;
+    overflow-y: scroll;
+    width: 100%;
+    transition: height 1s;
+
+    &__shrinked {
+        transition: height 1s;
+        height: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        display: block;
+    }
+
+    &::-webkit-scrollbar {
+        width: 1rem;
+        display: block;
+        background: transparent !important;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
 
     &__row {
 
+        flex: 0 0 auto;
         display: flex;
         flex-direction: row;
         justify-content: space-between;

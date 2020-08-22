@@ -4,7 +4,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {hot} from "react-hot-loader/root";
 import React, {Component} from 'react';
-import { WorkspaceContext } from "../../../../context/Contexts";
+import { WorkspaceContext, ThemeContext } from "../../../../context/Contexts";
 import FolderTree from '../../../../utils/FolderTree';
 import File from './File';
 import Folder from './Folder';
@@ -12,6 +12,7 @@ import Folder from './Folder';
 type State = {
     folderPath: string;
     folderSelected: boolean;
+    folderExpanded: boolean;
 }
 
 type Props = {
@@ -25,11 +26,16 @@ class FileTree extends Component<Props, State>{
         this.state = {
             folderPath: "FileTree",
             folderSelected: true,
+            folderExpanded: true,
         }
 
         this.renderPage = this.renderPage.bind(this);
+        this.triggerExpansion = this.triggerExpansion.bind(this);
     }
 
+    public triggerExpansion() {
+        this.setState({folderExpanded: !this.state.folderExpanded});
+    }
 
     public renderPage(path, func) {
 
@@ -46,7 +52,14 @@ class FileTree extends Component<Props, State>{
             ))
 
             return(
-                <div>{items}</div>
+                <ThemeContext.Consumer>
+                    {({theme}) => (
+                        <div className={`filetreeContainer ${theme}__filetreeContainer`}>
+                            <div className={`filetreeContainer__TreeHeading ${theme}__filetreeContainer__TreeHeadinh`} onClick={this.triggerExpansion}>{dirName}</div>
+                            <div className={`filetree ${theme}__filetree ${this.state.folderExpanded ? "" : 'filetree__shrinked' }`}>{items}</div>    
+                        </div>                    
+                    )}
+                </ThemeContext.Consumer>
             )
         }
         else {

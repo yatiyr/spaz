@@ -1,11 +1,29 @@
-.filetree {
+.default_dark__filetree {
+
+
+    
+
+    &:hover {
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba($leftbar-filetree-scrollbar-background_default_dark,.5);
+            
+        }
+
+    }
+
+    &::-webkit-scrollbar-thumb {
+        transition: background-color 1s ease-in;
+        background-color: rgba($leftbar-filetree-scrollbar-background_default_dark,.0);
+        
+    }
 
     &__row {
 
-        color: #fff;
+        color: $leftbar-filetree-element-font_default_dark;
 
         &:hover {
-            background-color: #0300be;
+            background-color: $leftbar-filetree-element-hover-background_default_dark;
         }
 
         &__namegroup {
@@ -15,7 +33,7 @@
 
                 &__svg {
 
-                    fill: #fff;
+                    fill: $leftbar-filetree-element-font_default_dark;
                 }
             }
 
@@ -23,14 +41,14 @@
 
                 &__svg {
 
-                    fill: #fff;
+                    fill: $leftbar-filetree-element-font_default_dark;
 
                     &__folderShrinked {
-                        fill: #fff;
+                        fill: $leftbar-filetree-element-font_default_dark;
                     }
 
                     &__folderExpanded {
-                        fill: #fff;
+                        fill: $leftbar-filetree-element-font_default_dark;
                     }
                 }
             }
