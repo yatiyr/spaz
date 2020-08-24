@@ -11,7 +11,7 @@ import FolderIndentation from "../../../../../../public/img/icons/fileTreeIndent
 type Props = {
     path: string;
     node: FolderTree;
-    id: number;
+    key: number;
 }
 
 type State = {
@@ -34,7 +34,7 @@ class File extends Component<Props, State> {
         return(
             <ThemeContext.Consumer>
                 { ({theme}) => (
-                    <div className={`filetree__row ${theme}__filetree__row`} id={`${this.props.id}`}>
+                    <li className={`filetree__row ${theme}__filetree__row`} key={`${this.props.path}`}>
                         <div className={`filetree__row__namegroup ${theme}__filetree__row__namegroup`}>
                             <div className={`filetree__row__namegroup__indentation ${theme}__filetree__row__namegroup__indentation`}>
                                 <FolderIndentation className={`filetree__row__namegroup__indentation__svg ${theme}__filetree__row__namegroup__indentation__svg`}/>
@@ -49,7 +49,7 @@ class File extends Component<Props, State> {
                         <div className={`filetree__row__modifier ${theme}__filetree__row__modifier`}>
 
                         </div>
-                    </div>
+                    </li>
                 )}
             </ThemeContext.Consumer>
         )

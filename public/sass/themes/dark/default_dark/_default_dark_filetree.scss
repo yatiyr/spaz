@@ -1,3 +1,60 @@
+.default_dark__filetreecontainer {
+
+    &__treeheading {
+
+        transition: color .5s,
+                    fill .5s,
+                    background-color .5s;
+
+        color: $leftbar-filetree-element-font_default_dark;
+        fill: $leftbar-filetree-element-font_default_dark;
+
+
+        //border-top: thin solid $leftbar-filetree-header-border-top;
+
+        &:hover {
+            color: $leftbar-filetree-element-font-hover__default_dark;
+            fill: $leftbar-filetree-element-font-hover__default_dark;
+        }
+
+        &__namesymbolgroup {
+
+
+
+            &__name {
+
+            }
+    
+            &__symbol {
+                
+
+                &__svg {
+
+
+                    &__folderShrinked {
+
+                    }
+
+                    &__folderExpanded {
+                
+                    }
+                }    
+            }
+
+        }
+
+        // TODO: SONRADAN SECENEKLERI EKLE!
+        &__choices {
+
+
+        }
+    }
+}
+
+
+
+
+
 .default_dark__filetree {
 
 

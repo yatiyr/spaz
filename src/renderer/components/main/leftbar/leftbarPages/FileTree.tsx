@@ -8,6 +8,7 @@ import { WorkspaceContext, ThemeContext } from "../../../../context/Contexts";
 import FolderTree from '../../../../utils/FolderTree';
 import File from './File';
 import Folder from './Folder';
+import FolderSymbol from "../../../../../../public/img/icons/folderSymbol.svg"
 
 type State = {
     folderPath: string;
@@ -48,15 +49,26 @@ class FileTree extends Component<Props, State>{
             console.log(fileTree);
             var id = 0;
             var items = fileTree.items.map((node) => (
-                node.isDirectory ? <Folder path={node.path} node={node} id={id++}/> : <File path={node.path} node={node} id={id++}/>
+                node.isDirectory ? <Folder path={node.path} node={node} key={id++}/> : <File path={node.path} node={node} key={id++}/>
             ))
 
             return(
                 <ThemeContext.Consumer>
                     {({theme}) => (
-                        <div className={`filetreeContainer ${theme}__filetreeContainer`}>
-                            <div className={`filetreeContainer__TreeHeading ${theme}__filetreeContainer__TreeHeadinh`} onClick={this.triggerExpansion}>{dirName}</div>
-                            <div className={`filetree ${theme}__filetree ${this.state.folderExpanded ? "" : 'filetree__shrinked' }`}>{items}</div>    
+                        <div className={`filetreecontainer ${theme}__filetreecontainer`}>
+                            <div className={`filetreecontainer__treeheading ${theme}__filetreecontainer__treeheading ${this.state.folderExpanded ? 'filetreecontainer__treeheading__shadowed' : '' }`} onClick={this.triggerExpansion}>
+                                <div className={`filetreecontainer__treeheading__namesymbolgroup ${theme}__filetreecontainer__treeheading__namesymbolgroup`}>
+                                    <div className={`filetreecontainer__treeheading__namesymbolgroup__symbol ${theme}__filetreecontainer__treeheading__namesymbolgroup__symbol`}>
+                                        <FolderSymbol className={`filetreecontainer__treeheading__namesymbolgroup__symbol__svg__folder${this.state.folderExpanded ? "Expanded" : "Shrinked"} ${theme}__filetreecontainer__treeheading__namesymbolgroup__symbol__svg__folder${this.state.folderExpanded ? "Expanded" : "Shrinked"}`}/>
+                                    </div>                                    
+                                    <div className={`filetreecontainer__treeheading__namesymbolgroup__name ${theme}__filetreecontainer__treeheading__namesymbolgroup__name`}>
+                                        {dirName}
+                                    </div>
+                                </div>
+                                <div className={`filetreecontainer__treeheading__choices ${theme}__filetreecontainer__treeheading__choices`}>
+                                </div>
+                            </div>
+                            <ul className={`filetree ${theme}__filetree ${this.state.folderExpanded ? "" : 'filetree__shrinked' }`}>{items}</ul>    
                         </div>                    
                     )}
                 </ThemeContext.Consumer>

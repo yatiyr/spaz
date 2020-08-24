@@ -11,6 +11,8 @@ export default class FolderTree {
     public path: any;
     public name: null;
     public items: any[];
+    public folders: any[];
+    public files: any[];
     public depth: number;
     public isDirectory: boolean;
 
@@ -18,22 +20,42 @@ export default class FolderTree {
         this.path = path;
         this.name = name;
         this.items = [];
+        this.files = [];
+        this.folders = [];
         this.depth = depth;
         this.isDirectory = isDirectory;
     }
 
     public build = () => {
-        this.items = this.readDir(this.path, this.depth);
+        this.readDir(this.path, this.depth);
     }
 
+    sortItems() {
+        this.items.sort(this.compareItems);
+    }
+
+
+    // TODO: TURKCE KARAKTERLI DOSYALARIN SIRALANMASI EKLENECEK
+    compareItems(a, b) {
+
+        var uppercasedA = a.name.toUpperCase();
+        var uppercasedB = b.name.toUpperCase();
+
+        if(uppercasedA > uppercasedB) {
+            return 1;
+        }
+        else if(uppercasedA < uppercasedB) {
+            return -1;
+        }
+        return 0;
+
+    }
 
     clearItems() {
         this.items = [];
     }
     
     readDir(path, depth) {
-        var fileArray: any[] = [];
-
 
             electronFs.readdirSync(path).forEach(file => {
 
@@ -42,11 +64,11 @@ export default class FolderTree {
         
                     if(stat.isDirectory()) {
                         var fileInfo = new FolderTree(`${path}\\${file}`, file, depth + 1, true);
-                        fileArray.push(fileInfo);
+                        this.folders.push(fileInfo);
                     }
                     else {
                         var fileInfo = new FolderTree(`${path}\\${file}`, file, depth + 1, false)
-                        fileArray.push(fileInfo);
+                        this.files.push(fileInfo);
                     }
 
                 }
@@ -54,6 +76,16 @@ export default class FolderTree {
                     console.log(error);
                 }
             })
-        return fileArray;
+
+        this.folders.sort(this.compareItems);
+        this.files.sort(this.compareItems);
+
+        this.folders.forEach(element => {
+            this.items.push(element);
+        });
+
+        this.files.forEach(element => {
+            this.items.push(element);
+        })
     }
 }

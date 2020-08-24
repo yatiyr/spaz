@@ -94,6 +94,16 @@
             justify-self: end;
             justify-content: flex-start;
 
+            &__header {
+                flex: 0 0 auto;
+                display: flex;
+                padding: 0rem 0rem 0rem 1.5rem;
+                flex-direction: row;
+                height: 3.5rem;
+                align-items: center;
+                justify-content: start;
+            }
+
         }
 
         &__header {

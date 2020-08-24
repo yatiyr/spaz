@@ -26,6 +26,15 @@
         
         &__data {
 
+            &__header {
+                font-family: "Raleway-Regular";
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                font-weight: 300;
+                text-rendering: geometricPrecision;
+                letter-spacing: .1rem;
+            }
+
         }
 
         &__header {

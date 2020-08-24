@@ -64,9 +64,14 @@ $header-background_default_dark: #00277c;
 
         // FILETREE
         $leftbar-filetree-scrollbar-background_default_dark: #79a3ff;
-        $leftbar-filetree-element-font_default_dark: #dbdbdb;
+        $leftbar-filetree-element-font_default_dark: #cfcfcf;
+        $leftbar-filetree-element-font-hover__default_dark: #fff;
         $leftbar-filetree-element-hover-background_default_dark: #003099;
         $leftbar-filetree-background_default_dark: #001747;
+
+            // HEADER
+            $leftbar-filetree-header-background-hover: #003099;
+            $leftbar-filetree-header-border-top: #41454e;
 
                 
         
