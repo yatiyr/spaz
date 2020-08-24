@@ -60,11 +60,17 @@
 
     
 
+
+
     &:hover {
 
         &::-webkit-scrollbar-thumb {
             background-color: rgba($leftbar-filetree-scrollbar-background_default_dark,.5);
             
+        }
+
+        & .default_dark__filetree__row__namegroup__indentation__svg {
+            fill: $leftbar-filetree-indentation_background_hovered_default_dark;
         }
 
     }
@@ -89,8 +95,8 @@
             &__indentation {
 
                 &__svg {
-
-                    fill: $leftbar-filetree-element-font_default_dark;
+                    transition: fill .5s;
+                    fill: $leftbar-filetree-indentation_background_idle_default_dark;
                 }
             }
 

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {hot} from "react-hot-loader/root";
-import React, {Component} from 'react';
+import React, {Component, PureComponent} from 'react';
 
 import Eti from './eti/Eti';
 import Leftbar from './leftbar/Leftbar';
@@ -13,6 +13,7 @@ import { ThemeContext } from "../../context/Contexts";
 type State = {
     RenderMode: string;
     showContent: boolean;
+    mounted: boolean;
 }
 
 type Props = {
@@ -20,16 +21,23 @@ type Props = {
 }
 
 
-class Main extends Component<Props, State> {
+class Main extends PureComponent<Props, State> {
 
     constructor(props) {
         super(props);
         this.state = {
             RenderMode: "FileTree",
             showContent: true,
+            mounted: false,
         }
 
         this.setSelection = this.setSelection.bind(this);
+    }
+
+    componentDidMount() {
+        this.setState({
+            mounted: true,
+        })
     }
 
     public setSelection(element) {
@@ -48,7 +56,6 @@ class Main extends Component<Props, State> {
     }
 
     public element() {
-
         if(this.state.showContent) {
             return (
                 <ThemeContext.Consumer>
@@ -63,7 +70,7 @@ class Main extends Component<Props, State> {
                                     <Eti/>                                                                             
                                 </SplitPane>
                             </div>
-                            <Rightbar/>
+                            <Rightbar/>                            
                         </div>  
                     )}
                 </ThemeContext.Consumer>       
@@ -82,7 +89,8 @@ class Main extends Component<Props, State> {
     }
 
     render() {
-        return(
+
+        return( 
             this.element()
         )
     }

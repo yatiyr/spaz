@@ -8,7 +8,7 @@
                 font-family: "Raleway-Bold";
                 font-size: 1.2rem;
                 text-transform: uppercase;
-                text-rendering: geometricPrecision;
+                text-rendering: optimizeSpeed;
             }
     
 
@@ -22,7 +22,7 @@
     &__row {
         font-size: 1.17rem;
         font-family: "Raleway-Regular";
-        text-rendering: geometricPrecision;
+        text-rendering: optimizeSpeed;
         
         &__namegroup {
 
