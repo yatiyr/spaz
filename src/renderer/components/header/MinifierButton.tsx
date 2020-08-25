@@ -23,7 +23,6 @@ class MinifierButton extends Component<Props, State> {
     componentDidMount() {
         const electronw = remote.getCurrentWindow();
         electronw.on('maximize', () => {
-            console.log('asfdasdas');
             this.setState({state: true});
         });
         electronw.on('unmaximize', () => {

@@ -44,14 +44,10 @@ class Main extends PureComponent<Props, State> {
 
         // If element is clicked again
         if(element === this.state.RenderMode) {
-            this.setState({RenderMode: element, showContent: !this.state.showContent}, () => {
-                console.log(this.state);
-            })
+            this.setState({RenderMode: element, showContent: !this.state.showContent})
         }
         else {
-            this.setState({RenderMode: element, showContent: true}, () => {
-                console.log(this.state);
-            })
+            this.setState({RenderMode: element, showContent: true})
         }
     }
 

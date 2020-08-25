@@ -26,10 +26,6 @@ class RightButtons extends Component<Props, State> {
         window.minimize();
     }
 
-    public handleMaximize() {
-        console.log('maximize bastin');
-    }
-
     public handleClose() {
         var window = remote.getCurrentWindow();
         window.close();

@@ -2,7 +2,7 @@ $primary-default_dark-selection: #00ffbf;
 
 // HEADER COLORS
 
-$header-background_default_dark: #00277c;
+$header-background_default_dark: #12234b;
 
     // LOGO DIV LOGO
     $header-logo-fill_default_dark: #ff006a;
@@ -10,7 +10,7 @@ $header-background_default_dark: #00277c;
     // PROPERTIES
         // PROP
         $header-properties-prop-font_default_dark: #dbdbdb;
-        $header-properties-prop-hoverandfocus-background_default_dark: #013cbb;
+        $header-properties-prop-hoverandfocus-background_default_dark: #1b356b;
         $header-properties-prop-hoverandfocus-font_default_dark: #ffffff;
 
         // HEADING
@@ -27,36 +27,36 @@ $header-background_default_dark: #00277c;
             // BUTTON MINIMIZER
             $header-properties-buttons-button-minimizer-fill_default_dark: #dbdbdb;
             $header-properties-buttons-button-minimizer-hover-fill_default_dark: #ffffff;
-            $header-properties-buttons-button-minimizer-hover-background-color: #013cbb;
+            $header-properties-buttons-button-minimizer-hover-background-color: #1b356b;
 
             // BUTTON MINIFIER
             $header-properties-buttons-button-minifier-fill_default_dark: #dbdbdb;
             $header-properties-buttons-button-minifier-hover-fill_default_dark: #ffffff;
-            $header-properties-buttons-button-minifier-hover-background-color: #013cbb;
+            $header-properties-buttons-button-minifier-hover-background-color: #1b356b;
             
 
 // MAIN COLORS
 
     // LEFTBAR
-    $leftbar-background_default_dark: #003747;
+    $leftbar-background_default_dark: #12234b;
 
         // SELECTOR
-        $leftbar-selector-background_default_dark: #00226d;
+        $leftbar-selector-background_default_dark: #0e1b3b;
 
             // ELEMENT
             $leftbar-selector-element-fill_default_dark: #dbdbdb;
             $leftbar-selector-element-hover-fill_default_dark: #ffffff;
-            $leftbar-selector-element-hover-background_default_dark: #002d8d;
-            $leftbar-selector-element-active-background_default_dark: #0040c9;
+            $leftbar-selector-element-hover-background_default_dark: #002479;
+            $leftbar-selector-element-active-background_default_dark: #12234b;
 
                 // MODIFIER
                     // TODO: SIMDILIK BOS
 
         // CONTENT
-        $leftbar-selector-content-background_default_dark: #001747;
+        $leftbar-selector-content-background_default_dark: #0e1b3b;
 
             // DATA
-            $leftbar-selector-content-data-background_default_dark: #001747;
+            $leftbar-selector-content-data-background_default_dark: #0a142c;
             $leftbar-selector-content-data-font_default_dark: #dbdbdb;
             // HEADER
 
@@ -68,48 +68,57 @@ $header-background_default_dark: #00277c;
         $leftbar-filetree-element-font-hover__default_dark: #fff;
         $leftbar-filetree-element-hover-background_default_dark: #9700bd44;
         $leftbar-filetree-background_default_dark: #001747;
-        $leftbar-filetree-indentation_background_idle_default_dark: #c300ff02;
+        $leftbar-filetree-indentation_background_idle_default_dark: #c300ff25;
         $leftbar-filetree-indentation_background_hovered_default_dark: #a200ffd2;
 
             // HEADER
-            $leftbar-filetree-header-background-hover: #003099;
-            $leftbar-filetree-header-border-top: #41454e;
+            $leftbar-filetree-header-background-hover_default_dark: #003099;
+            $leftbar-filetree-header-border-top_default_dark: #41454e;
+
+            // BUTTONS
+            $leftbar-filetree-folderselectbutton_default_dark: #c300ff25;
+            $leftbar-filetree-folderselectbutton-hovered_default_dark: #a200ffd2;
+            $leftbar-filetree-folderselectbutton-font_default_dark: #cfcfcf;
+            $leftbar-filetree-folderselectbutton-glow_default_dark: #bf50ffd2;
+            $leftbar-filetree-folderselectbutton-active_default_dark: #d400ffd2;
 
                 
         
     // ETI
-    $eti-background_default_dark: #000f30;
+    $eti-background_default_dark: #0e1629;
 
         // HEADER
-        $eti-header-background_default_dark: #001747;
+        $eti-header-background_default_dark: #0e1629;
         $eti-header-font_default_dark: #dbdbdb;
 
         // CONTAINER
-        $eti-container-background_default_dark: #000f30;
+        $eti-container-background_default_dark: #0e1629;
         $eti-container-font_default_dark: #dbdbdb;
 
         // TERMINT
-        $eti-termint-background_default_dark: #000f30;
+        $eti-termint-background_default_dark: #0e1629;
         $eti-termint-font_default_dark: #dbdbdb;
 
             // HEADER
-            $eti-termint-header-background_default_dark: #000f30;
+            $eti-termint-header-background_default_dark: #080f20;
 
     // RIGHTBAR
-    $rightbar-background_default_dark: #001747;
+    $rightbar-background_default_dark: #0a142c;
     $rightbar-font_default_dark: #dbdbdb;
 
 // FOOTER COLORS
 $footer-background_default_dark: #44006b;
+$footer-background-hover_default_dark: #6f02ad;
+$footer-glow_default_dark: #8335b1;
 
 // UTIL COLORS
 
     // DROPDOWN
-    $dropdown-background_default_dark: #001747;
+    $dropdown-background_default_dark: #0a142c;
     $dropdown-font_default_dark: #dbdbdb;
 
     // ELEMENT
-    $dropdown-element-hover-background_default_dark: #002880;
+    $dropdown-element-hover-background_default_dark: #9700bd44;
 
     // TOOLTIP
     $tooltip-background_default_dark: #000;
@@ -117,4 +126,4 @@ $footer-background_default_dark: #44006b;
 
     // RESIZER
     $eti-termint-resizer-background_default_dark: #333b4d;
-    $leftbar-resizer-background_default_dark: #001747;
+    $leftbar-resizer-background_default_dark: #0a142c;

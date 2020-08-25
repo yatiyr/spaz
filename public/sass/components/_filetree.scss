@@ -3,7 +3,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    flex: 0 1 auto;
+    flex: 1 1 auto;
     min-height: 0;
     overflow-y: scroll;
 
@@ -106,6 +106,62 @@
         background: transparent;
     }
 
+
+
+    &__folderselectpart {
+
+        display: flex;
+        flex-direction: column;
+
+        &__folderselectionexplanation {
+            justify-self: center;
+            align-self: center;
+            flex: 1 1 auto;
+            width: 85%;
+            flex-wrap: wrap;
+            align-items: center;
+
+            &__overflowheading {
+                flex-grow: 1;
+                white-space: normal;
+                overflow-wrap: break-word;
+                align-content: center;
+                margin: 1rem 0rem 3rem 0rem;
+            }
+
+            &__overflowparagraph {
+                flex-grow: 1;
+                white-space: normal;
+                overflow-wrap: break-word;
+                margin: 0rem 0rem 2rem 0rem;
+            }
+        }
+
+        &__buttonwrapper {
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            justify-self: center;
+            align-self: center;
+        }        
+
+        &__folderselectbutton {
+            display: flex;
+            flex: 1 1 auto;
+            justify-content: center;
+            height: 3.5rem;
+            align-items: center;
+        }
+
+    }
+
+    &__buttonwrapper {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        justify-self: center;
+        align-self: center;
+    }
     &__folderwrapper {
         display: flex;
         flex-direction: column;

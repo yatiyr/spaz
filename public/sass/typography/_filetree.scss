@@ -19,6 +19,26 @@
 
 .filetree {
 
+    &__folderselectpart {
+
+
+        &__folderselectionexplanation {
+
+
+            &__overflowheading {
+                font-size: 1.7rem;
+                font-family: "Roboto-Bold";
+                text-transform: uppercase;
+                text-align: center;
+            }
+
+            &__overflowparagraph {
+                font-size: 1.5rem;
+                font-family: "Roboto-Regular";
+            }
+        }
+    }
+
     &__row {
         font-size: 1.17rem;
         font-family: "Raleway-Regular";

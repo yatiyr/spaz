@@ -3,6 +3,14 @@
 
     &__footer {
         background-color: $footer-background-default_dark;
+        transition: box-shadow .3s,
+                    background-color .3s;
+        &:hover {
+     
+            background-color: $footer-background-hover_default_dark;
+            box-shadow: 0rem -.5rem 10px rgba($footer-glow_default_dark, .4);
+            
+        }
     }
 
 

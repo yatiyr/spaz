@@ -3,7 +3,7 @@
 import {hot} from "react-hot-loader/root";
 import React, {Component} from 'react';
 import Logo from '../../../../public/img/icons/spaz_icon.svg';
-import {ThemeContext} from "../../context/Contexts";
+import {ThemeContext, WorkspaceContext} from "../../context/Contexts";
 import ReactDOM from "react-dom";
 
 type Props = {theme: string;
@@ -41,60 +41,64 @@ class Properties extends Component<Props, State> {
 
     render() {
         return(
-            <div className="header__properties">
-                <div className="header__logoDiv"><Logo className={`header__logoDiv__logo ${this.props.theme}__header__logoDiv__logo`}/></div>
-                <div className={`header__properties__prop ${this.props.theme}__header__properties__prop dropdown ${this.props.theme}__dropdown`} onClick={this.toggleVisibility}>
-                    <ul className="dropdownbox" style={this.state.visibility ? {visibility: "visible"} : {visibility: "hidden"}}>
-                        <div className="dropdownElement"><div className="item">New File</div><div className="item">Ctrl+N</div></div>
-                        <div className="dropdownElement"><div className="item">Nesıoea File</div><div className="item">Ctrl+N</div></div>
-                        <div className="dropdownElement"><div className="item">Nsadsadsasdasdd</div><div className="item">Ct+N</div></div>
-                        <div className="dropdownElement"><div className="item">Nsadsadsassadasdd</div></div>
-                    </ul>
-                    <div className="header__properties__prop__name">
-                        File
+            <WorkspaceContext.Consumer>
+            { ({changePath}) => ( 
+                <div className="header__properties">
+                    <div className="header__logoDiv"><Logo className={`header__logoDiv__logo ${this.props.theme}__header__logoDiv__logo`}/></div>
+                    <div className={`header__properties__prop ${this.props.theme}__header__properties__prop dropdown ${this.props.theme}__dropdown`} onClick={this.toggleVisibility}>
+                        <ul className="dropdownbox" style={this.state.visibility ? {visibility: "visible"} : {visibility: "hidden"}}>
+                            <div className="dropdownElement"><div className="item">New File</div><div className="item">Ctrl+N</div></div>
+                            <div className="dropdownElement" onClick={changePath}><div className="item">New Folder</div><div className="item">Ctrl+F</div></div>
+                            <div className="dropdownElement"><div className="item">Nsadsadsasdasdd</div><div className="item">Ct+N</div></div>
+                            <div className="dropdownElement"><div className="item">Nsadsadsassadasdd</div></div>
+                        </ul>
+                        <div className="header__properties__prop__name">
+                            File
+                        </div>
+                    </div>                  
+                    <div className={`header__properties__prop ${this.props.theme}__header__properties__prop dropdown ${this.props.theme}__dropdown`} onClick={this.toggleVisibility}>
+                        <ul className="dropdownbox" style={this.state.visibility ? {visibility: "visible"} : {visibility: "hidden"}}>
+                            <div className="dropdownElement">a</div>
+                            <div className="dropdownElement">b</div>
+                            <div className="dropdownElement">c</div>
+                        </ul>
+                        <div className="header__properties__prop__name">
+                            Edit
+                        </div>
                     </div>
-                </div>                  
-                <div className={`header__properties__prop ${this.props.theme}__header__properties__prop dropdown ${this.props.theme}__dropdown`} onClick={this.toggleVisibility}>
-                    <ul className="dropdownbox" style={this.state.visibility ? {visibility: "visible"} : {visibility: "hidden"}}>
-                        <div className="dropdownElement">a</div>
-                        <div className="dropdownElement">b</div>
-                        <div className="dropdownElement">c</div>
-                    </ul>
-                    <div className="header__properties__prop__name">
-                        Edit
+                    <div className={`header__properties__prop ${this.props.theme}__header__properties__prop dropdown ${this.props.theme}__dropdown`} onClick={this.toggleVisibility}>
+                        <ul className="dropdownbox" style={this.state.visibility ? {visibility: "visible"} : {visibility: "hidden"}}>
+                            <div className="dropdownElement">a</div>
+                            <div className="dropdownElement">b</div>
+                            <div className="dropdownElement">c</div>
+                        </ul>
+                        <div className="header__properties__prop__name">
+                            View
+                        </div>
+                    </div>
+                    <div className={`header__properties__prop ${this.props.theme}__header__properties__prop dropdown ${this.props.theme}__dropdown`} onClick={this.toggleVisibility}>
+                        <ul className="dropdownbox" style={this.state.visibility ? {visibility: "visible"} : {visibility: "hidden"}}>
+                            <div className="dropdownElement">a</div>
+                            <div className="dropdownElement">b</div>
+                            <div className="dropdownElement">c</div>
+                        </ul>
+                        <div className="header__properties__prop__name">
+                            Window
+                        </div>
+                    </div>
+                    <div className={`header__properties__prop ${this.props.theme}__header__properties__prop dropdown ${this.props.theme}__dropdown`} onClick={this.toggleVisibility}>
+                        <ul className="dropdownbox" style={this.state.visibility ? {visibility: "visible"} : {visibility: "hidden"}}>
+                            <div className="dropdownElement">a</div>
+                            <div className="dropdownElement">b</div>
+                            <div className="dropdownElement">c</div>
+                        </ul>
+                        <div className="header__properties__prop__name">
+                            Help
+                        </div>
                     </div>
                 </div>
-                <div className={`header__properties__prop ${this.props.theme}__header__properties__prop dropdown ${this.props.theme}__dropdown`} onClick={this.toggleVisibility}>
-                    <ul className="dropdownbox" style={this.state.visibility ? {visibility: "visible"} : {visibility: "hidden"}}>
-                        <div className="dropdownElement">a</div>
-                        <div className="dropdownElement">b</div>
-                        <div className="dropdownElement">c</div>
-                    </ul>
-                    <div className="header__properties__prop__name">
-                        View
-                    </div>
-                </div>
-                <div className={`header__properties__prop ${this.props.theme}__header__properties__prop dropdown ${this.props.theme}__dropdown`} onClick={this.toggleVisibility}>
-                    <ul className="dropdownbox" style={this.state.visibility ? {visibility: "visible"} : {visibility: "hidden"}}>
-                        <div className="dropdownElement">a</div>
-                        <div className="dropdownElement">b</div>
-                        <div className="dropdownElement">c</div>
-                    </ul>
-                    <div className="header__properties__prop__name">
-                        Window
-                    </div>
-                </div>
-                <div className={`header__properties__prop ${this.props.theme}__header__properties__prop dropdown ${this.props.theme}__dropdown`} onClick={this.toggleVisibility}>
-                    <ul className="dropdownbox" style={this.state.visibility ? {visibility: "visible"} : {visibility: "hidden"}}>
-                        <div className="dropdownElement">a</div>
-                        <div className="dropdownElement">b</div>
-                        <div className="dropdownElement">c</div>
-                    </ul>
-                    <div className="header__properties__prop__name">
-                        Help
-                    </div>
-                </div>
-            </div>
+                )}
+            </WorkspaceContext.Consumer>
         )
     }
 }

@@ -9,6 +9,6 @@ export const ThemeContext = React.createContext({
 export const WorkspaceContext = React.createContext({
     folderPath: "addFolderPath",
     changePath: (any) => {},
-    pathSelected: false
+    pathSelected: false,
 })
 

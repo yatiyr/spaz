@@ -18,8 +18,23 @@ class LeftbarContent extends Component<Props, State> {
 
     constructor(props) {
         super(props);
+
+        this.givePage = this.givePage.bind(this);
     }
 
+
+    public givePage() {
+        switch (this.props.whichPage) {
+            case "FileTree":
+                return <FileTree/>;
+        
+            case "Find":
+                return <div>WORK ON PROGRESS</div>;
+            
+            default:
+                break;
+        }
+    }
     public element() {
 
         if(this.props.showPage) {
@@ -31,8 +46,7 @@ class LeftbarContent extends Component<Props, State> {
                                 <div className={`leftbar__content__data__header ${theme}__leftbar__content__data__header`}>
                                     {this.props.whichPage}
                                 </div>
-                                <FileTree/>
-                                <div className="">asdasd</div>
+                                {this.givePage()}
                             </div>
                         </div>    
                     )}

@@ -56,9 +56,33 @@
 
 
 .default_dark__filetree {
-
-
     
+
+    &__folderselectpart {
+
+        &__folderselectbutton {
+
+            background-color: $leftbar-filetree-folderselectbutton_default_dark;
+            transition: box-shadow .5s,
+                        background-color .5s;
+            color: $leftbar-filetree-folderselectbutton-font_default_dark;
+            &:hover {
+                background-color: $leftbar-filetree-folderselectbutton-hovered_default_dark;
+                box-shadow: 1rem 1rem 5rem rgba($leftbar-filetree-folderselectbutton-glow_default_dark,.3),
+                            -1rem -1rem 5rem rgba($leftbar-filetree-folderselectbutton-glow_default_dark,.3);
+            }
+    
+            &:active {
+                transform: translateY(.2rem);
+                transition: box-shadow 0s,
+                            background-color 0s;
+                background-color: $leftbar-filetree-folderselectbutton-active_default_dark;
+                box-shadow: 1rem 1rem 2rem rgba($leftbar-filetree-folderselectbutton-glow_default_dark,.3),
+                -1rem -1rem 2rem rgba($leftbar-filetree-folderselectbutton-glow_default_dark,.3);
+            }
+        }
+
+    }
 
 
 

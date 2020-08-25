@@ -39,7 +39,6 @@ class Cesium extends Component {
             viewer.cesiumWidget.creditContainer.parentNode?.removeChild(
                 viewer.cesiumWidget.creditContainer);
 
-            //console.log('cesium viewer = ', viewer);
         }
     }
 

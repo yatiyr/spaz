@@ -74,7 +74,7 @@ class App extends Component<Props, State> {
         workspaceSettings: {
             folderPath: "*",
             changePath: this.changePath,
-            pathSelected: false
+            pathSelected: false,
         },
     }
     //this.toggleTheme = this.toggleTheme.bind(this);

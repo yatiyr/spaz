@@ -41,14 +41,14 @@ class Folder extends Component<Props,State> {
         if(!this.state.itemsLoaded) {
             var dirNameFinderRegex = /(\/|\\)(?!.*[\r\n]*.*\1)/mgu;
             var lastIndex = this.props.path.search(dirNameFinderRegex);
-            var dirName = this.props.path.substr(lastIndex + 1, this.props.path.length)
+            var dirName = this.props.path.substr(lastIndex + 1, this.props.path.length);
             var fileTree = new FolderTree(this.props.path, dirName, this.props.depth);
             fileTree.build();
             var id = 0;
             var itemArray: any[];
             itemArray = fileTree.items.map((node) => 
             (node.isDirectory ? <Folder path={node.path} node={node} key={id++} depth={node.depth}/> : 
-                                <File path={node.path} node={node} key={id++} depth={node.depth}/>))
+                                <File path={node.path} node={node} key={id++} depth={node.depth}/>));
 
             this.setState({items: itemArray, itemsLoaded: true});
         }
