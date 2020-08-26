@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable no-var */
@@ -10,30 +11,27 @@ var electronFs = remote.require('fs');
 export default class FolderTree {
     public path: any;
     public name: null;
-    public items: any[];
-    public folders: any[];
-    public files: any[];
     public depth: number;
     public isDirectory: boolean;
+    public isExpanded: boolean;
+    public areItemsLoaded: boolean;
+    public rendered: boolean;
 
     constructor(path, name, depth=0, isDirectory=true) {
         this.path = path;
         this.name = name;
-        this.items = [];
-        this.files = [];
-        this.folders = [];
         this.depth = depth;
         this.isDirectory = isDirectory;
+        this.isExpanded = false;
+        this.areItemsLoaded = false;
+        this.rendered = true;
     }
 
     public build = () => {
-        this.readDir(this.path, this.depth);
-    }
 
-    sortItems() {
-        this.items.sort(this.compareItems);
-    }
+        return (this.readDir(this.path, this.depth));
 
+    }
 
     // TODO: TURKCE KARAKTERLI DOSYALARIN SIRALANMASI EKLENECEK
     compareItems(a, b) {
@@ -50,42 +48,47 @@ export default class FolderTree {
         return 0;
 
     }
-
-    clearItems() {
-        this.items = [];
-    }
     
     readDir(path, depth) {
 
-            electronFs.readdirSync(path).forEach(file => {
+        var items: any[];
+        var folders: any[];
+        var files: any[];
 
-                try {
-                    var stat = electronFs.statSync(`${path}\\${file}`);
+        items = [];
+        folders = [];
+        files = [];
+
+        electronFs.readdirSync(path).forEach(file => {
+            try {
+                var stat = electronFs.statSync(`${path}\\${file}`);
         
-                    if(stat.isDirectory()) {
-                        var fileInfo = new FolderTree(`${path}\\${file}`, file, depth + 1, true);
-                        this.folders.push(fileInfo);
-                    }
-                    else {
-                        var fileInfo = new FolderTree(`${path}\\${file}`, file, depth + 1, false)
-                        this.files.push(fileInfo);
-                    }
-
+                if(stat.isDirectory()) {
+                    var fileInfo = new FolderTree(`${path}\\${file}`, file, depth + 1, true);
+                    folders.push(fileInfo);
                 }
-                catch (error) {
-                    console.log(error);
+                else {
+                    var fileInfo = new FolderTree(`${path}\\${file}`, file, depth + 1, false)
+                    files.push(fileInfo);
                 }
-            })
 
-        this.folders.sort(this.compareItems);
-        this.files.sort(this.compareItems);
+            }
+            catch (error) {
+                console.log(error);
+             }
+        })
 
-        this.folders.forEach(element => {
-            this.items.push(element);
+        folders.sort(this.compareItems);
+        files.sort(this.compareItems);
+
+        folders.forEach(element => {
+            items.push(element);
         });
 
-        this.files.forEach(element => {
-            this.items.push(element);
+        files.forEach(element => {
+            items.push(element);
         })
+
+        return items;
     }
 }

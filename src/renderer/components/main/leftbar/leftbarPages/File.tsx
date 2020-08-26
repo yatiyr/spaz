@@ -12,8 +12,9 @@ import FolderIndentation from "../../../../../../public/img/icons/fileTreeIndent
 
 type Props = {
     path: string;
-    node: FolderTree;
+    name: string;
     key: number;
+    id: number;
     depth: number;
 }
 
@@ -69,7 +70,7 @@ class File extends Component<Props, State> {
 
                             </div>
                             <span className={`filetree__row__namegroup__name ${theme}__filetree__row__namegroup__name`}>
-                                {this.props.node.name}
+                                {this.props.name}
                             </span>
                         </div>
                         <div className={`filetree__row__modifier ${theme}__filetree__row__modifier`}>

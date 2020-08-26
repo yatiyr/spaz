@@ -16,6 +16,8 @@ type State = {
     folderExpanded: boolean;
     folderChanged: boolean;
     items: any[];
+    renderedItems: any[];
+    nodes: any[];
     dirName: string;
 }
 
@@ -33,11 +35,14 @@ class FileTree extends Component<Props, State>{
             folderExpanded: true,
             folderChanged: false,
             items: [],
+            renderedItems: [],
+            nodes: [],
             dirName: "",
         }
 
         this.renderPage = this.renderPage.bind(this);
         this.triggerExpansion = this.triggerExpansion.bind(this);
+
     }
 
 
@@ -46,22 +51,38 @@ class FileTree extends Component<Props, State>{
         var lastIndex = path.search(dirNameFinderRegex);
         var dirName = path.substr(lastIndex + 1, path.length)
         var fileTree = new FolderTree(path, dirName);
-        fileTree.build();
-        var id = 0;
-        var itemArray: any[];
-        itemArray = fileTree.items.map((node) => 
-        (node.isDirectory ? <Folder path={node.path} node={node} key={id++} depth={node.depth}/> : 
-                            <File path={node.path} node={node} key={id++} depth={node.depth}/>))
-        this.setState({folderPath: path, items: itemArray, folderSelected: true, dirName: dirName});        
+        var fileItems = fileTree.build();
+        var childArray: any[] = [];
+
+        for(var i=0;i<fileItems.length;i++) {
+
+            var elem = fileItems[i];
+
+            if(elem.isDirectory) {
+                var renderElem = <Folder path={elem.path}
+                                         name={elem.name}
+                                         key={i}
+                                         id={i}
+                                         depth={0}
+                                         />
+                childArray.push(renderElem);
+            }
+            else {
+                var renderElem = <File path={elem.path}
+                                       name={elem.name}
+                                       key={i}
+                                       id={i}
+                                       depth={0}/>
+                childArray.push(renderElem);
+            }
+        }
+
+
+        this.setState({folderPath: path, items: childArray, folderSelected: true, dirName: dirName});        
     }
 
     public triggerExpansion() {
         this.setState({folderExpanded: !this.state.folderExpanded});
-    }
-
-    // TODO: BUNUNLA UGRAS EVDE ONEMLI!! HATIRLARSIN BAKINCA. KIB BYE
-    public handleItemRender() {
-        
     }
 
     public renderPage(path, func) {

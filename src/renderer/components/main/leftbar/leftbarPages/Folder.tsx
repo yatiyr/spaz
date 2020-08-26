@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { hot } from "react-hot-loader/root";
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import FolderTree from '../../../../utils/FolderTree';
 import { ThemeContext } from "../../../../context/Contexts";
 import FolderIndentation from "../../../../../../public/img/icons/fileTreeIndentation.svg"
@@ -11,15 +11,16 @@ import File from './File';
 
 type Props = {
     path: string;
-    node: FolderTree;
+    name: string;
     key: number;
+    id: number;
     depth: number;
 }
 
 type State = {
-    isExpanded: boolean;
-    itemsLoaded: boolean;
     items: any[];
+    areItemsLoaded: boolean;
+    isExpanded: boolean;
 }
 
 class Folder extends Component<Props,State> {
@@ -28,32 +29,63 @@ class Folder extends Component<Props,State> {
         super(props);
 
         this.state = {
+            areItemsLoaded: false,
             isExpanded: false,
-            itemsLoaded: false,
             items: [],
         }
 
         this.toggleExpansion = this.toggleExpansion.bind(this);
     }
 
-    toggleExpansion() {
 
-        if(!this.state.itemsLoaded) {
-            var dirNameFinderRegex = /(\/|\\)(?!.*[\r\n]*.*\1)/mgu;
-            var lastIndex = this.props.path.search(dirNameFinderRegex);
-            var dirName = this.props.path.substr(lastIndex + 1, this.props.path.length);
-            var fileTree = new FolderTree(this.props.path, dirName, this.props.depth);
-            fileTree.build();
-            var id = 0;
-            var itemArray: any[];
-            itemArray = fileTree.items.map((node) => 
-            (node.isDirectory ? <Folder path={node.path} node={node} key={id++} depth={node.depth}/> : 
-                                <File path={node.path} node={node} key={id++} depth={node.depth}/>));
+    buildChildren() {
+        var dirNameFinderRegex = /(\/|\\)(?!.*[\r\n]*.*\1)/mgu;
+        var lastIndex = this.props.path.search(dirNameFinderRegex);
+        var dirName = this.props.path.substr(lastIndex + 1, this.props.path.length)
+        var fileTree = new FolderTree(this.props.path, dirName);
+        var fileItems = fileTree.build();
+        var childArray: any[] = [];
 
-            this.setState({items: itemArray, itemsLoaded: true});
+        for(var i=0;i<fileItems.length;i++) {
+
+            var elem = fileItems[i];
+
+            if(elem.isDirectory) {
+                var renderElem = <Folder path={elem.path}
+                                         name={elem.name}
+                                         key={i}
+                                         id={i}
+                                         depth={this.props.depth+1}
+                                         />
+                childArray.push(renderElem);
+            }
+            else {
+                var renderElem = <File path={elem.path}
+                                       name={elem.name}
+                                       key={i}
+                                       id={i}
+                                       depth={this.props.depth+1}/>
+                childArray.push(renderElem);
+            }
         }
 
-        this.setState({isExpanded: !this.state.isExpanded});
+        this.setState({items: childArray, areItemsLoaded: true, isExpanded: true})
+
+    }
+
+    toggleExpansion() {
+
+        console.log(this.state.items);
+
+        if(!this.state.isExpanded && !this.state.areItemsLoaded) {
+            this.buildChildren();
+        }
+        else if(!this.state.isExpanded) {
+            this.setState({isExpanded: true});
+        }
+        else {
+            this.setState({isExpanded: false});
+        }
 
     }
 
@@ -87,25 +119,23 @@ class Folder extends Component<Props,State> {
         return(
             <ThemeContext.Consumer>
                 { ({theme}) => (
-                    <div className="filetree__folderwrapper">
-                        <li className={`filetree__row ${theme}__filetree__row`} key={`${this.props.path}`} onClick={this.toggleExpansion}>
+                    <Fragment>
+                        <li className={`filetree__row ${theme}__filetree__row`} id={`${this.props.path}`} onClick={this.toggleExpansion}>
                             <div className={`filetree__row__namegroup ${theme}__filetree__row__namegroup`}>
                                 {this.giveIndentation(theme)}
                                 <div className={`filetree__row__namegroup__symbol ${theme}__filetree__row__namegroup__symbol`} >
                                     <FolderSymbol className={`filetree__row__namegroup__symbol__svg__folder${this.state.isExpanded ? "Expanded" : "Shrinked"} ${theme}__filetree__row__namegroup__symbol__svg__folder${this.state.isExpanded ? "Expanded" : "Shrinked"}`}/>
                                 </div>
                                 <span className={`filetree__row__namegroup__name ${theme}__filetree__row__namegroup__name`}>
-                                    {this.props.node.name}
+                                    {this.props.name}
                                 </span>
                             </div>
                             <div className={`filetree__row__modifier ${theme}__filetree__row__modifier`}>
 
                             </div>
                         </li>
-                        <div className={`filetree__folderwrapper__items ${this.state.isExpanded ? "" : 'filetree__folderwrapper__items__shrinked'}`}>
-                            {this.state.isExpanded ? this.state.items : ""}
-                        </div>
-                    </div>
+                        {this.state.isExpanded ? this.state.items : ""}
+                    </Fragment>
                 )}
             </ThemeContext.Consumer>
         )
