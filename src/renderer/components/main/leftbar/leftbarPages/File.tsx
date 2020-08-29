@@ -31,6 +31,12 @@ class File extends Component<Props, State> {
             isShownOnEditor: false,
             isModified: false
         }
+
+        this.isDirectory = this.isDirectory.bind(this);
+    }
+
+    public isDirectory() {
+        return false;
     }
 
     giveIndentation(theme) {
@@ -38,7 +44,7 @@ class File extends Component<Props, State> {
 
         indentation = [];
 
-        for(var i = 0; i<this.props.depth; i++) {
+        for(var i = 0; i<this.props.depth+1; i++) {
             if(i == 0) {
                 indentation.push(
                     <div className={`filetree__row__namegroup__indentation ${theme}__filetree__row__namegroup__indentation`}>

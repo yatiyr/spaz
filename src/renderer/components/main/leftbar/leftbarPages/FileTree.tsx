@@ -42,9 +42,13 @@ class FileTree extends Component<Props, State>{
 
         this.renderPage = this.renderPage.bind(this);
         this.triggerExpansion = this.triggerExpansion.bind(this);
+        this.isExpanded = this.isExpanded.bind(this);
 
     }
 
+    public isExpanded(val) {
+        return val;
+    }
 
     public handleItemBuild(path) {
         var dirNameFinderRegex = /(\/|\\)(?!.*[\r\n]*.*\1)/mgu;

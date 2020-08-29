@@ -75,8 +75,6 @@ class Folder extends Component<Props,State> {
 
     toggleExpansion() {
 
-        console.log(this.state.items);
-
         if(!this.state.isExpanded && !this.state.areItemsLoaded) {
             this.buildChildren();
         }
@@ -94,7 +92,7 @@ class Folder extends Component<Props,State> {
 
         indentation = [];
 
-        for(var i = 0; i<this.props.depth; i++) {
+        for(var i = 0; i<this.props.depth+1; i++) {
             if(i == 0) {
                 indentation.push(
                     <div className={`filetree__row__namegroup__indentation ${theme}__filetree__row__namegroup__indentation`}>

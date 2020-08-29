@@ -9,6 +9,7 @@ import Cesium from './Cesium';
 import 'cesiumSource/Widgets/widgets.css';
 import SplitPane, {Pane} from 'react-split-pane';
 import { ThemeContext } from "../../../context/Contexts";
+import Diagram from "./diagramManager/Diagram";
 
 const cesium = require('cesiumSource/Cesium');
 import { Viewer, CesiumInspector } from 'cesium';
@@ -55,7 +56,7 @@ class Eti extends Component {
                                     resizerClassName={`${theme}__termint_eti_resizer`}>
 
                                 <div className={`eti__container ${theme}__eti__container`}>
-                                    abcd
+                                    <Diagram/>
                                 </div>
 
                                 <div style={{flex: "1 1 auto"}} className={`eti__termint ${theme}__eti__termint`}>

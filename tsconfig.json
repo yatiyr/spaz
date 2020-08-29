@@ -4,7 +4,7 @@
     "noImplicitAny": false,
     "sourceMap": true,
     "jsx": "react",
-    "target": "es5",
+    "target": "es6",
     "outDir": "./.webpack/main",
     "lib": [
       "dom",
