@@ -3,7 +3,7 @@
 /* eslint-disable no-var */
 import { WheelEvent } from 'react';
 
-import {Action, ActionEvent, InputType, Mapping} from '@projectstorm/react-canvas-core';
+import {Action, ActionEvent, InputType} from '@projectstorm/react-canvas-core';
 
 
 export default class ZoomAction extends Action {
@@ -22,7 +22,7 @@ export default class ZoomAction extends Action {
                 const zoom = {
                     max: 100,
                     value: 1,
-                    step: 5,
+                    step: 8,
                 }
 
                 var zoomLevel = model.getZoomLevel();

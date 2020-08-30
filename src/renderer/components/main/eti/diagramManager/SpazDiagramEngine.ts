@@ -1,5 +1,3 @@
-import {Point} from '@projectstorm/geometry';
-
 import ZoomAction from './actions/ZoomAction';
 
 import CreateEngine, {
@@ -15,7 +13,7 @@ export class SpazDiagramEngine {
     constructor() {
 
         this.engine = CreateEngine({
-            registerDefaultDeleteItemsAction: false,
+            registerDefaultDeleteItemsAction: true,
             registerDefaultZoomCanvasAction: false,
         })
         

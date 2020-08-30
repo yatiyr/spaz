@@ -52,7 +52,6 @@ class Diagram extends Component<any,any> {
         this.spazEngine.engine.setModel(this.spazEngine.model);
 
         this.spazEngine.model.registerListener({})
-        console.log(this.spazEngine.model.getZoomLevel());
 
     }
 
