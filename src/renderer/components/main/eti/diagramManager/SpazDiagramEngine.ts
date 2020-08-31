@@ -1,9 +1,13 @@
 import ZoomAction from './actions/ZoomAction';
 
 import CreateEngine, {
-    DiagramModel, DiagramEngine,
+    DiagramModel, DiagramEngine, PortModelAlignment,
 } from '@projectstorm/react-diagrams';
 
+import { ModuleFactory } from './elements/module/ModuleFactory';
+import { ModulePortFactory } from './elements/module/ModulePortFactory';
+import { ModuleModel } from './elements/module/ModuleModel';
+import { ModulePortModel } from './elements/module/ModulePortModel';
 
 export class SpazDiagramEngine {
 
@@ -16,6 +20,12 @@ export class SpazDiagramEngine {
             registerDefaultDeleteItemsAction: true,
             registerDefaultZoomCanvasAction: false,
         })
+
+        this.engine
+            .getPortFactories()
+            .registerFactory(new ModulePortFactory('module', (config) => new ModulePortModel(PortModelAlignment.RIGHT)));
+        this.engine
+            .getNodeFactories().registerFactory(new ModuleFactory());
         
         this.model = new DiagramModel();
 

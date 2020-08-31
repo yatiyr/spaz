@@ -7,11 +7,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {hot} from "react-hot-loader/root";
 import React, {Component, RefObject, Props, createRef} from 'react';
-import createEngine, { DiagramModel, DefaultNodeModel } from '@projectstorm/react-diagrams';
+import { DefaultNodeModel } from '@projectstorm/react-diagrams';
 import { ThemeContext } from "../../../../context/Contexts";
 import { CanvasWidget } from '@projectstorm/react-canvas-core';
-import ReactDOM from "react-dom";
 import {SpazDiagramEngine} from './SpazDiagramEngine';
+
+import { ModuleModel } from './elements/module/ModuleModel';
 
 class Diagram extends Component<any,any> {
     spazEngine: any;
@@ -45,9 +46,12 @@ class Diagram extends Component<any,any> {
         var node4 = new DefaultNodeModel('Node 4', 'rgb(0,123,200)');
         node4.setPosition(400,400);
 
+        var node5 = new ModuleModel();
+        node5.setPosition(600,600);
+
         var link1 = port1.link(port2);
 
-        this.spazEngine.model.addAll(node1,node2,link1,node3,node4);
+        this.spazEngine.model.addAll(node1,node2,link1,node3,node4,node5);
 
         this.spazEngine.engine.setModel(this.spazEngine.model);
 
